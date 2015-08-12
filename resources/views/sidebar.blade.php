@@ -9,11 +9,11 @@
 
         <ul class="sidebar-menu">
             <li class="header">CADASTROS</li>
-            <li @if($titPagina == 'Competidores') class="active" @endif><a href="/competidores"><span>Competidores</span></a></li>
-            <li @if($titPagina == 'Eventos') class="active" @endif><a href="/eventos"><span>Eventos</span></a></li>
+            <li @if($titPagina == 'Competidores') class="active" @endif><a href="{{ route('competidores.index') }}"><span>Competidores</span></a></li>
+            <li @if($titPagina == 'Eventos') class="active" @endif><a href="{{ route('eventos.index') }}"><span>Eventos</span></a></li>
             <li class="header">INSCRIÇÕES</li>
-            <li @if($titPagina == 'Inscrições') class="active" @endif><a href="/inscricoes"><span>Fazer Inscrição</span></a></li>
-            <li @if($titPagina == 'Sorteios') class="active" @endif><a href="/sorteios"><span>Gerar Sorteio</span></a></li>
+            <li @if($titPagina == 'Inscrições') class="active" @endif><a href="{{ route('inscricoes.index') }}"><span>Fazer Inscrição</span></a></li>
+            <li @if($titPagina == 'Sorteios') class="active" @endif><a href="{{ route('sorteios.index') }}"><span>Gerar Sorteio</span></a></li>
         </ul>
     </section>
 </aside>
