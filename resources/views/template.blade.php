@@ -14,6 +14,8 @@
     <link href="{{ asset('/bower_components/admin-lte/plugins/DataTables-1.10.7/media/css/jquery.dataTables.css') }}" rel="stylesheet" type="text/css" />
     <!-- DatePicker -->
     <link href="{{ asset('/bower_components/admin-lte/plugins/datepicker/datepicker3.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Select2 -->
+    <link href="{{ asset('/bower_components/admin-lte/plugins/select2-4.0.0/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="{{ asset('/bower_components/admin-lte/dist/css/AdminLTE.css') }}" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -73,6 +75,8 @@
 <!-- Datepicker -->
 <script src="{{ asset('/bower_components/admin-lte/plugins/datepicker/bootstrap-datepicker.js') }}" type="text/javascript" ></script>
 <script src="{{ asset('/bower_components/admin-lte/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js') }}" type="text/javascript" ></script>
+<!-- Select2 -->
+<script src="{{ asset('/bower_components/admin-lte/plugins/select2-4.0.0/dist/js/select2.min.js') }}" type="text/javascript" ></script>
 <!-- JS SCRIPTS -->
 @yield('scripts')
 
