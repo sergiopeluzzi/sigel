@@ -3837,6 +3837,9 @@ table.text-center th {
 .bg-black {
   background-color: #111111 !important;
 }
+.bg-white {
+    background-color: #ffffff !important;
+}
 .bg-red,
 .callout.callout-danger,
 .alert-danger,

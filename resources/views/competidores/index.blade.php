@@ -32,7 +32,7 @@
                                     <td class="text-center">{{ $competidor->handcapcabeca }}</td>
                                     <td class="text-center">{{ $competidor->handcappe }}</td>
                                     <td class="text-center">{{ $competidor->telefone }}</td>
-                                    <td>
+                                    <td align="center">
                                         <a data-toggle="tooltip" data-original-title="Editar" class="btn btn-sm btn-primary" href="{{ route('competidores.edit', ['id' => $competidor->id]) }}"><i class="glyphicon glyphicon-edit"></i></a>
                                         <a data-toggle="modal" data-target="#confirm-delete" class="btn btn-sm btn-danger" href="#" data-href="{{ route('competidores.destroy', ['id' => $competidor->id]) }}"><i class="glyphicon glyphicon-remove"></i></a>
                                     </td>

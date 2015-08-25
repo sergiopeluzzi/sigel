@@ -24,12 +24,21 @@
       <column name="nome" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="descricao" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="cidade" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="datainicio" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
-      <column name="datafim" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="datainicio" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="datafim" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
       <column name="maxnuminscricoes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="maxnuminscricoesporpessoa" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="maxnuminscricoesporhandcap" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="maxnuminscricoescommesmocompetidor" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="inscricoes" schema="" catalog="homestead" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idevento" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idcompetidorcabeca" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="idcompetidorpe" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>

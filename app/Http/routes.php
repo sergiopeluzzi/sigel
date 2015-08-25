@@ -30,17 +30,23 @@ Route::group(['prefix' => 'competidores', 'middleware' => 'auth'], function() {
 
 });
 
-
-
 Route::group(['prefix' => 'eventos', 'middleware' => 'auth'], function() {
 
     Route::get('/', ['as' => 'eventos.index', 'uses' => 'EventosController@index']);
+    Route::get('create', ['as' => 'eventos.create', 'uses' => 'EventosController@create']);
+    Route::get('show/{id}', ['as' => 'eventos.show', 'uses' => 'EventosController@show']);
+    Route::post('store', ['as' => 'eventos.store', 'uses' => 'EventosController@store']);
+    Route::get('edit/{id}', ['as' => 'eventos.edit', 'uses' => 'EventosController@edit']);
+    Route::put('update/{id}', ['as' => 'eventos.update', 'uses' => 'EventosController@update']);
+    Route::get('destroy/{id}', ['as' => 'eventos.destroy', 'uses' => 'EventosController@destroy']);
 
 });
 
 Route::group(['prefix' => 'inscricoes', 'middleware' => 'auth'], function() {
 
     Route::get('/', ['as' => 'inscricoes.index', 'uses' => 'InscricoesController@index']);
+    Route::post('inscrever', ['as' => 'inscricoes.inscrever', 'uses' => 'InscricoesController@inscrever']);
+    Route::get('destroy/{id}', ['as' => 'inscricoes.destroy', 'uses' => 'InscricoesController@destroy']);
 
 });
 
