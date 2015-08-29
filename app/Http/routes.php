@@ -53,4 +53,7 @@ Route::group(['prefix' => 'inscricoes', 'middleware' => 'auth'], function() {
 Route::group(['prefix' => 'sorteios', 'middleware' => 'auth'], function() {
 
     Route::get('/', ['as' => 'sorteios.index', 'uses' => 'SorteiosController@index']);
+    Route::post('processar', ['as' => 'sorteios.processar', 'uses' => 'SorteiosController@processar']);
+    Route::post('visualizar', ['as' => 'sorteios.visualizar', 'uses' => 'SorteiosController@visualizar']);
+    Route::post('salvar', ['as' => 'sorteios.salvar', 'uses' => 'SorteiosController@salvar']);
 });

@@ -13,7 +13,7 @@
             <li @if($titPagina == 'Eventos') class="active" @endif><a href="{{ route('eventos.index') }}"><span>Eventos</span></a></li>
             <li class="header">INSCRIÇÕES</li>
             <li @if($titPagina == 'Inscrições') class="active" @endif><a href="{{ route('inscricoes.index') }}"><span>Fazer Inscrição</span></a></li>
-            <li @if($titPagina == 'Sorteios') class="active" @endif><a href="{{ route('sorteios.index') }}"><span>Gerar Sorteio</span></a></li>
+            <li @if($titPagina == 'Sorteios') class="active" @endif><a href="{{ route('sorteios.index') }}"><span>Prova / Competição</span></a></li>
         </ul>
     </section>
 </aside>

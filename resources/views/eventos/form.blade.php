@@ -14,7 +14,6 @@
 </div>
 
 <div class="row">
-
     <div class="col-xs-6">
         {!! Form::label('datainicio', 'Data Inicial') !!}
         {!! Form::input('date', 'datainicio', isset($evento) ? $evento->datainicio->format('Y-m-d') : '', ['class' => 'form-control']) !!}
@@ -30,7 +29,6 @@
 <br/>
 
 <div class="row">
-
     <div class="col-xs-3">
         {!! Form::label('maxnuminscricoes', 'Max Inscrições:*') !!}
         {!! Form::input('number', 'maxnuminscricoes', null,
@@ -70,7 +68,18 @@
         'data-placement' => 'top',
         'data-content' => 'Número máximo de inscrições do competidor com o mesmo parceiro']) !!}
     </div>
-
 </div>
 <p class="text-red pull-right"><b>*Deixe em branco ou 0 (zero) para ilimitado</b></p>
+<br/>
+<div class="row">
+    <div class="col-xs-3">
+        {!! Form::label('qntdebois', 'Quantidade de provas') !!}
+        {!! Form::input('number', 'qntdebois', null,
+        ['class' => 'form-control',
+        'data-toggle' => 'popover',
+        'data-trigger' => 'focus',
+        'data-placement' => 'top',
+        'data-content' => 'Quantidade provas/bois antes da prova/boi final']) !!}
+    </div>
+</div>
 <br>

@@ -22,7 +22,7 @@ class InscricoesController extends Controller
     {
         $this->inscricao = $inscricao;
         $this->competidor = $competidor;
-        $this->evento = $evento->orderBy('id', 'desc')->get();
+        $this->evento = $evento;
         $this->data['titPagina'] = 'Inscrições';
         $this->data['descPagina'] = 'Realizar inscrição dos competidores';
         $this->toast = $toast;
@@ -31,7 +31,7 @@ class InscricoesController extends Controller
     public function index()
     {
         $this->data['competidores'] = $this->competidor->all();
-        $this->data['eventos'] = $this->evento->all();
+        $this->data['eventos'] = $this->evento->orderBy('id', 'desc')->get();
         $this->data['inscricoes'] = $this->inscricao->all();
 
         return view('inscricoes.index')->with($this->data);
