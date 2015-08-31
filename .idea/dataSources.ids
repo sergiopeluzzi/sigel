@@ -32,6 +32,7 @@
       <column name="maxnuminscricoescommesmocompetidor" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="qntdebois" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="inscricoes" schema="" catalog="homestead" type="TABLE">

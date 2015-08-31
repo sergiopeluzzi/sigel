@@ -32,7 +32,8 @@ class EventosRequest extends Request
             'maxnuminscricoes' => 'numeric',
             'maxnuminscricoesporpessoa' => 'numeric',
             'maxnuminscricoesporhandcap' => 'numeric',
-            'maxnuminscricoescommesmocompetidor' => 'numeric'
+            'maxnuminscricoescommesmocompetidor' => 'numeric',
+            'qntdebois' => 'numeric'
         ];
     }
 }

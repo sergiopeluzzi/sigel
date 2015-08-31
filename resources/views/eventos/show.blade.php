@@ -62,6 +62,10 @@
                                     <td>Número máximo de inscrições com o mesmo parceiro:</td>
                                     <td>{{ $evento->maxnuminscricoescommesmocompetidor }}</td>
                                 </tr>
+                                <tr>
+                                    <td>Número de provas/bois:</td>
+                                    <td>{{ $evento->qntdebois }}</td>
+                                </tr>
                             </tbody>
                         </table>
 

@@ -28,7 +28,7 @@
                                 <th class="text-center">HC Total</th>
                                 <th class="text-center" colspan="2">Competidor Cabeça</th>
                                 <th class="text-center" colspan="2">Competidor Pé</th>
-                                @for($i = 1; $i <= 8; $i++)
+                                @for($i = 1; $i <= $evento->qntdebois; $i++)
                                     <th class="text-center">Boi {{$i}}</th>
                                 @endfor
                                 <th class="text-center">Boi Final</th>
@@ -37,12 +37,13 @@
                             <tbody>
                             @foreach($inscricoes as $inscricao)
                                 <tr>
+                                    {!! Form::hidden('idinscricao', $inscricao->id) !!}
                                     <td class="text-center text-bold" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca + \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                     <td class="text-center" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca }}</td>
                                     <td>{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->nome }}</td>
                                     <td class="text-center" width="5">{{ \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                     <td>{{ \App\Competidor::find($inscricao->idcompetidorpe)->nome}}</td>
-                                    @for($i = 1; $i <= 8; $i++)
+                                    @for($i = 1; $i <= $evento->qntdebois; $i++)
                                         <td class="text-center">{!! Form::text("boi$i",  null, ['class' => 'form-control']) !!}</td>
                                     @endfor
                                     <td class="text-center">{!! Form::text("boifinal",  null, ['class' => 'form-control']) !!}</td>
@@ -53,6 +54,7 @@
                         <button type="submit" class="btn btn-lg btn-success" value="Salvar">
                             <i class="glyphicon glyphicon-floppy-save"></i> Salvar
                         </button>
+                        {!! Form::hidden('idevento', $evento->id) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>

@@ -49,7 +49,7 @@ class SorteiosController extends Controller
         return view('sorteios.visualizar')->with($this->data);
     }
 
-    public function salvar()
+    public function salvar(Request $request)
     {
         $this->toast->message('Sucesso', 'success');
 
