@@ -24,7 +24,6 @@ class CompetidoresController extends Controller
     public function index()
     {
         $this->data['competidores'] = $this->competidor->all();
-
         return view('competidores.index')->with($this->data);
     }
 
@@ -36,34 +35,27 @@ class CompetidoresController extends Controller
     public function store(CompetidoresRequest $request)
     {
         $this->competidor->create($request->all());
-
         $this->toast->message('Adicionado com sucesso', 'success', "COMPETIDOR: {$this->competidor->latest()->first()->id}");
-
         return redirect()->route('competidores.index');
     }
 
     public function edit($id)
     {
         $this->data['competidor'] = $this->competidor->find($id);
-
         return view('competidores.edit')->with($this->data);
     }
 
     public function update($id, CompetidoresRequest $request)
     {
         $this->competidor->find($id)->update($request->all());
-
         $this->toast->message('Atualizado com sucesso', 'info', "COMPETIDOR: {$id}");
-
         return redirect()->route('competidores.index');
     }
 
     public function destroy($id)
     {
         $this->competidor->find($id)->delete();
-
         $this->toast->message('Excluído com sucesso', 'error', "COMPETIDOR: {$id}");
-
         return redirect()->route('competidores.index');
     }
 }

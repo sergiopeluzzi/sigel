@@ -50,6 +50,9 @@
                 </div>
             </div>
         </div>
+
+        @include('vendor.toast.messages-jquery')
+
     </div>
 @stop
 

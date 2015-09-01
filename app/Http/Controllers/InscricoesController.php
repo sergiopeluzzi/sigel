@@ -33,25 +33,20 @@ class InscricoesController extends Controller
         $this->data['competidores'] = $this->competidor->all();
         $this->data['eventos'] = $this->evento->orderBy('id', 'desc')->get();
         $this->data['inscricoes'] = $this->inscricao->all();
-
         return view('inscricoes.index')->with($this->data);
     }
 
     public function inscrever(InscricoesRequest $request)
     {
         $this->inscricao->create($request->all());
-
         $this->toast->message('Adicionado com sucesso', 'success', "COD. INSCRIÇÃO: {$this->inscricao->latest()->first()->id}");
-
         return redirect()->route('inscricoes.index');
     }
 
     public function destroy($id)
     {
         $this->inscricao->find($id)->delete();
-
         $this->toast->message('Excluído com sucesso', 'error', "INSCRIÇÃO: {$id}");
-
         return redirect()->route('inscricoes.index');
     }
 

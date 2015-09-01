@@ -29,6 +29,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->model('competidores', 'App\Competidor');
         $router->model('eventos', 'App\Evento');
         $router->model('inscricoes', 'App\Inscricao');
+        $router->model('provas', 'App\Prova');
     }
 
     /**
