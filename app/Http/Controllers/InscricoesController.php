@@ -38,7 +38,11 @@ class InscricoesController extends Controller
 
     public function inscrever(InscricoesRequest $request)
     {
-        $this->inscricao->create($request->all());
+        $qnt = $request->get('qntdeinscricoes');
+
+        for($i = 0; $i < $qnt; $i++) {
+            $this->inscricao->create($request->all());
+        }
         $this->toast->message('Adicionado com sucesso', 'success', "COD. INSCRIÇÃO: {$this->inscricao->latest()->first()->id}");
         return redirect()->route('inscricoes.index');
     }

@@ -21,7 +21,7 @@
                     @endif
 
                     <div class="panel-body">
-                        {!! Form::open(['route' => 'sorteios.salvar', 'method' => 'post']) !!}
+                        {!! Form::model($prova, ['route' => ['sorteios.salvar', $prova->id], 'method' => 'put']) !!}
                         <table id="tbprova" class="table table-hover table-bordered" cellspacing="0" width="100%">
                             <thead class="bg-green-gradient">
                             <tr>
@@ -40,9 +40,9 @@
                                     {!! Form::hidden('idinscricao', $inscricao->id) !!}
                                     <td class="text-center text-bold" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca + \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                     <td class="text-center" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca }}</td>
-                                    <td>{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->nome }}</td>
+                                    <td>{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->nome }} <br/> {{'* ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->apelido }}</td>
                                     <td class="text-center" width="5">{{ \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
-                                    <td>{{ \App\Competidor::find($inscricao->idcompetidorpe)->nome}}</td>
+                                    <td>{{ \App\Competidor::find($inscricao->idcompetidorpe)->nome }} <br> {{'* ' . \App\Competidor::find($inscricao->idcompetidorpe)->apelido }}</td>
                                     @for($i = 1; $i <= $evento->qntdebois; $i++)
                                         <td class="text-center">{!! Form::text("boi$i",  null, ['class' => 'form-control']) !!}</td>
                                     @endfor

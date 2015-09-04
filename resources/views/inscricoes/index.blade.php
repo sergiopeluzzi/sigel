@@ -53,6 +53,17 @@
                             <br/>
                             <div class="row">
                                 <div class="col-xs-2">
+                                    <label for="qntdeinscricoes">N. Inscrições:</label>
+                                    <select id="qntdeinscricoes" name="qntdeinscricoes" class="form-control">
+                                        @for($i = 1; $i <= 50; $i++)
+                                            <option value="{{ $i }}">{{ $i }}</option>
+                                        @endfor
+                                    </select>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-xs-2">
                                     <button type="submit" class="btn btn-lg btn-success" value="Salvar">
                                         <i class="glyphicon glyphicon-pencil"></i> Inscrever
                                     </button>

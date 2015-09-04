@@ -54,7 +54,7 @@ class SorteiosController extends Controller
                     $i = 1;
                     while ($i <= $evento->qntdebois) {
                         $data['idinscricao'] = $inscricao->id;
-                        $data['boi'] = 'Boi'.$i;
+                        $data['boi'] = 'boi'.$i;
                         $data['pontuacao'] = 0.0;
                         $this->prova->create($data);
                         $i++;
