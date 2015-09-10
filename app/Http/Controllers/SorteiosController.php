@@ -74,9 +74,13 @@ class SorteiosController extends Controller
         return view('sorteios.visualizar')->with($this->data);
     }
 
-    public function salvar(Request $request)
+    public function inserir(Request $request)
     {
-        $this->toast->message('Pontuação salva com sucesso!', 'success');
-        return redirect()->route('sorteios.index');
+        return view('sorteios.inserir')->with($this->data);
+    }
+
+    public function editar(Request $request)
+    {
+        return view('sorteios.editar')->with($this->data);
     }
 }

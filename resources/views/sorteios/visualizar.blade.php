@@ -21,41 +21,33 @@
                     @endif
 
                     <div class="panel-body">
-                        {!! Form::model($prova, ['route' => ['sorteios.salvar', $prova->id], 'method' => 'put']) !!}
                         <table id="tbprova" class="table table-hover table-bordered" cellspacing="0" width="100%">
                             <thead class="bg-green-gradient">
                             <tr>
                                 <th class="text-center">HC Total</th>
                                 <th class="text-center" colspan="2">Competidor Cabeça</th>
                                 <th class="text-center" colspan="2">Competidor Pé</th>
-                                @for($i = 1; $i <= $evento->qntdebois; $i++)
-                                    <th class="text-center">Boi {{$i}}</th>
-                                @endfor
-                                <th class="text-center">Boi Final</th>
+                                <th class="text-center">Média</th>
+                                <th class="text-center">Ações</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($inscricoes as $inscricao)
-                                <tr>
-                                    {!! Form::hidden('idinscricao', $inscricao->id) !!}
+                                <tr class="text-nowrap no-margin">
                                     <td class="text-center text-bold" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca + \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
-                                    <td class="text-center" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca }}</td>
-                                    <td>{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->nome }} <br/> {{'* ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->apelido }}</td>
-                                    <td class="text-center" width="5">{{ \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
-                                    <td>{{ \App\Competidor::find($inscricao->idcompetidorpe)->nome }} <br> {{'* ' . \App\Competidor::find($inscricao->idcompetidorpe)->apelido }}</td>
-                                    @for($i = 1; $i <= $evento->qntdebois; $i++)
-                                        <td class="text-center">{!! Form::text("boi$i",  null, ['class' => 'form-control']) !!}</td>
-                                    @endfor
-                                    <td class="text-center">{!! Form::text("boifinal",  null, ['class' => 'form-control']) !!}</td>
+                                    <td class="text-center" width="15">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca }}</td>
+                                    <td>{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->apelido }}</td>
+                                    <td class="text-center" width="15">{{ \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
+                                    <td>{{ \App\Competidor::find($inscricao->idcompetidorpe)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorpe)->apelido }}</td>
+                                    <td class="text-center text-bold">9.8</td>
+                                    <td align="center">
+                                        <a data-toggle="tooltip" data-original-title="Inserir tempo" class="btn btn-sm btn-primary" href="{{ route('sorteios.visualizar.inserir') }}"><i class="glyphicon glyphicon-time"></i></a>
+                                        <a data-toggle="tooltip" data-original-title="Editar tempo" class="btn btn-sm btn-warning" href="{{ route('sorteios.visualizar.editar') }}"><i class="glyphicon glyphicon-list-alt"></i></a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
                         </table>
-                        <button type="submit" class="btn btn-lg btn-success" value="Salvar">
-                            <i class="glyphicon glyphicon-floppy-save"></i> Salvar
-                        </button>
-                        {!! Form::hidden('idevento', $evento->id) !!}
-                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
