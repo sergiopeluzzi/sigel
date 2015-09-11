@@ -74,13 +74,25 @@ class SorteiosController extends Controller
         return view('sorteios.visualizar')->with($this->data);
     }
 
-    public function inserir(Request $request)
+    public function inserir(Request $request, $id)
     {
+        $this->data['inscricao'] = $this->inscricao->find($id);
+        $this->data['provas'] = $this->prova->where('idInscricao', $id)->get();
+        $this->data['evento'] = $this->evento->find($this->data['inscricao']['idevento']);
         return view('sorteios.inserir')->with($this->data);
     }
 
     public function editar(Request $request)
     {
         return view('sorteios.editar')->with($this->data);
+    }
+
+    public function salvar(Request $request)
+    {
+        $this->data['inscricao'] = $this->inscricao->find($request->get('idinscricao'));
+        $this->data['evento'] = $this->evento->find($this->data['inscricao']['idevento']);
+        $this->data['inscricoes'] = $this->inscricao->where('idevento', $this->data['evento']['id'])->get();
+        $this->toast->message('Pontuação realizada com sucesso: Inscrição: ' . $this->data['inscricao']['id'], 'success');
+        return view('sorteios.visualizar')->with($this->data);
     }
 }

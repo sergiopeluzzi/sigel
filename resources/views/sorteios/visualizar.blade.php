@@ -34,15 +34,15 @@
                             <tbody>
                             @foreach($inscricoes as $inscricao)
                                 <tr class="text-nowrap no-margin">
-                                    <td class="text-center text-bold" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca + \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
+                                    <td class="text-center text-bold lead" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca + \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                     <td class="text-center" width="15">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca }}</td>
                                     <td>{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->apelido }}</td>
                                     <td class="text-center" width="15">{{ \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                     <td>{{ \App\Competidor::find($inscricao->idcompetidorpe)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorpe)->apelido }}</td>
-                                    <td class="text-center text-bold">9.8</td>
+                                    <td class="text-center text-bold lead">9.8</td>
                                     <td align="center">
-                                        <a data-toggle="tooltip" data-original-title="Inserir tempo" class="btn btn-sm btn-primary" href="{{ route('sorteios.visualizar.inserir') }}"><i class="glyphicon glyphicon-time"></i></a>
-                                        <a data-toggle="tooltip" data-original-title="Editar tempo" class="btn btn-sm btn-warning" href="{{ route('sorteios.visualizar.editar') }}"><i class="glyphicon glyphicon-list-alt"></i></a>
+                                        <a data-toggle="tooltip" data-original-title="Inserir tempo" class="btn btn-sm btn-primary" href="{{ route('sorteios.visualizar.inserir', ['id' => $inscricao->id]) }}"><i class="glyphicon glyphicon-time"></i></a>
+                                        <a data-toggle="tooltip" data-original-title="Editar tempo" class="btn btn-sm btn-warning" href="{{ route('sorteios.visualizar.editar', ['id' => $inscricao->id]) }}"><i class="glyphicon glyphicon-list-alt"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
