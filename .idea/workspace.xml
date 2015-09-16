@@ -45,11 +45,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6935484" vertical-offset="696" max-vertical-offset="1311">
-              <caret line="66" column="118" selection-start-line="66" selection-start-column="118" selection-end-line="66" selection-end-column="118" />
+            <state vertical-scroll-proportion="-15.037037" vertical-offset="696" max-vertical-offset="1330">
+              <caret line="67" column="139" selection-start-line="67" selection-start-column="139" selection-end-line="67" selection-end-column="139" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/sorteios/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1330">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -68,8 +78,8 @@
       <file leaf-file-name="RelatoriosController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.4074073" vertical-offset="1336" max-vertical-offset="2451">
-              <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+            <state vertical-scroll-proportion="-5.6296296" vertical-offset="1425" max-vertical-offset="2584">
+              <caret line="83" column="41" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="41" />
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
@@ -77,11 +87,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visualizar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php">
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/eventos/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.259259" vertical-offset="513" max-vertical-offset="1425">
-              <caret line="43" column="202" selection-start-line="43" selection-start-column="202" selection-end-line="43" selection-end-column="202" />
+            <state vertical-scroll-proportion="-11.259259" vertical-offset="114" max-vertical-offset="1102">
+              <caret line="22" column="87" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="marcacaoprova.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.85125446" vertical-offset="0" max-vertical-offset="836">
+              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -144,8 +164,9 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php" />
         <option value="$PROJECT_DIR$/resources/views/sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php" />
       </list>
     </option>
   </component>
@@ -222,6 +243,82 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sorteios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="relatorios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -232,7 +329,7 @@
     <property name="options.lastSelected" value="File.Encoding" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="Relato&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/config/app.php&#10;si&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sidebar.blade.php&#10;index&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/index.blade.php&#10;routes&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/routes.php&#10;create&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/create.blade.php&#10;form&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;index.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/competidores/index.blade.php&#10;EventosCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;route&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/routes.php&#10;edit&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;visu&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;sorte&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;Inscri&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;Competidores&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;EventosContr&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;side&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sidebar.blade.php&#10;ProvasRe&#9;null&#9;null&#10;Service&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Providers/RouteServiceProvider.php&#10;Prova&#9;null&#9;null&#10;edi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;Evento&#9;null&#9;null&#10;sho.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/show.blade.php&#10;eventosRe&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/EventosRequest.php&#10;form.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;ed&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;Insc&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;Sorteio&#9;null&#9;null&#10;tem&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/template.blade.php&#10;EventosC&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;Inscricao&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Inscricao.php&#10;RouteS&#9;null&#9;null&#10;EventosRe&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/EventosRequest.php&#10;Eventos&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;InscricoesRe&#9;null&#9;null&#10;create.blade&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/competidores/create.blade.php&#10;inde&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/competidores/index.blade.php&#10;form.bla&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/competidores/form.blade.php&#10;app.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/config/app.php&#10;Form&#9;null&#9;null&#10;Contro&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;Princi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/PrincipalController.php&#10;authCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/Auth/AuthController.php&#10;header&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/header.blade.php&#10;templ&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/template.blade.php&#10;config/app&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/config/app.php&#10;Competi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/CompetidoresRequest.php&#10;templa&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/template.blade.php&#10;RouteSer&#9;null&#9;null&#10;Compe&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="visu&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;create&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/create.blade.php&#10;Sorteios&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;Relato&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/config/app.php&#10;si&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sidebar.blade.php&#10;index&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/index.blade.php&#10;routes&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/routes.php&#10;form&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;index.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/competidores/index.blade.php&#10;EventosCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;route&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/routes.php&#10;edit&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;sorte&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;Inscri&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;Competidores&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;EventosContr&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;side&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sidebar.blade.php&#10;ProvasRe&#9;null&#9;null&#10;Service&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Providers/RouteServiceProvider.php&#10;Prova&#9;null&#9;null&#10;edi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;Evento&#9;null&#9;null&#10;sho.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/show.blade.php&#10;eventosRe&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/EventosRequest.php&#10;form.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;ed&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;Insc&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;Sorteio&#9;null&#9;null&#10;tem&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/template.blade.php&#10;EventosC&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;Inscricao&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Inscricao.php&#10;RouteS&#9;null&#9;null&#10;EventosRe&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/EventosRequest.php&#10;Eventos&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;InscricoesRe&#9;null&#9;null&#10;create.blade&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/competidores/create.blade.php&#10;inde&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/competidores/index.blade.php&#10;form.bla&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/competidores/form.blade.php&#10;app.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/config/app.php&#10;Form&#9;null&#9;null&#10;Contro&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;Princi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/PrincipalController.php&#10;authCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/Auth/AuthController.php&#10;header&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/header.blade.php&#10;templ&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/template.blade.php&#10;config/app&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/config/app.php&#10;Competi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/CompetidoresRequest.php&#10;templa&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/template.blade.php&#10;RouteSer&#9;null&#9;null" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -339,13 +436,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CompetidoresRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8172043" vertical-offset="114" max-vertical-offset="760">
-          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/dom-crawler/Form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.420183" vertical-offset="8689" max-vertical-offset="9234">
@@ -627,36 +717,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sorteios/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667" vertical-offset="456" max-vertical-offset="1330">
-          <caret line="42" column="146" selection-start-line="42" selection-start-column="146" selection-end-line="42" selection-end-column="146" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61290324" vertical-offset="0" max-vertical-offset="1159">
           <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20430107" vertical-offset="171" max-vertical-offset="2014">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#61#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/eventos/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3673835" vertical-offset="289" max-vertical-offset="1102">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="33" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -693,6 +757,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sorteios/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1330">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.481482" vertical-offset="0" max-vertical-offset="627">
@@ -701,28 +773,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/eventos/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4074073" vertical-offset="1336" max-vertical-offset="2451">
-          <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
-          <folding>
-            <element signature="e#40#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.259259" vertical-offset="513" max-vertical-offset="1425">
-          <caret line="43" column="202" selection-start-line="43" selection-start-column="202" selection-end-line="43" selection-end-column="202" />
+        <state vertical-scroll-proportion="-11.259259" vertical-offset="114" max-vertical-offset="1102">
+          <caret line="22" column="87" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="87" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6935484" vertical-offset="696" max-vertical-offset="1311">
-          <caret line="66" column="118" selection-start-line="66" selection-start-column="118" selection-end-line="66" selection-end-column="118" />
+        <state vertical-scroll-proportion="-15.037037" vertical-offset="696" max-vertical-offset="1330">
+          <caret line="67" column="139" selection-start-line="67" selection-start-column="139" selection-end-line="67" selection-end-column="139" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69175625" vertical-offset="32" max-vertical-offset="1881">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8366972" vertical-offset="627" max-vertical-offset="1425">
+          <caret line="57" column="10" selection-start-line="50" selection-start-column="20" selection-end-line="57" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.6296296" vertical-offset="1425" max-vertical-offset="2584">
+          <caret line="83" column="41" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="41" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85125446" vertical-offset="0" max-vertical-offset="836">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding />
         </state>
       </provider>

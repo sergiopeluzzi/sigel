@@ -26,6 +26,8 @@ class RelatoriosController extends Controller
         $this->inscricao = $inscricao;
         $this->competidor = $competidor;
         $this->prova = $prova;
+        $this->data['titPagina'] = 'Relatorios';
+        $this->data['descPagina'] = 'Geração de relatórios em PDF';
     }
 
     public function teste()
@@ -76,7 +78,12 @@ class RelatoriosController extends Controller
 
     public function marcacaoProva()
     {
-        $evento = $this->evento->find(6);
+        return view('relatorios.marcacaoprova')->with($this->data);
+    }
+
+    public function imprimirMarcacaoProva()
+    {
+        $evento = $this->evento->find(2);
         $inscricoes = $this->inscricao->where('idevento', $evento->id)->get();
 
         $fpdf = new Fpdf();
