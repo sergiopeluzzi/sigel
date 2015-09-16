@@ -146,6 +146,7 @@ return [
 
         \Illuminate\Html\HtmlServiceProvider::class,
         Grimthorr\LaravelToast\ServiceProvider::class,
+        \Anouar\Fpdf\FpdfServiceProvider::class,
 
     ),
 
@@ -198,6 +199,7 @@ return [
         'Form'      => \Illuminate\Html\FormFacade::class,
         'Html'      => \Illuminate\Html\HtmlFacade::class,
         'Toast'     => Grimthorr\LaravelToast\Facade::class,
+        'Fpdf'      => \Anouar\Fpdf\Facades\Fpdf::class,
 
     ],
 

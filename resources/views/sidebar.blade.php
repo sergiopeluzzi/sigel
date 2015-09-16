@@ -18,9 +18,9 @@
             <li class="treeview">
                 <a href="#"><span>Relatórios</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu" style="display: none">
-                    <li @if($titPagina == 'Relatórios') class="active" @endif><a href="/#"><span>Lista Geral</span></a></li>
-                    <li @if($titPagina == 'Relatórios') class="active" @endif><a href="/#"><span>Marcação da Prova</span></a></li>
-                    <li @if($titPagina == 'Relatórios') class="active" @endif><a href="/#"><span>Ficha do Competidor</span></a></li>
+                    <li @if($titPagina == 'Relatórios') class="active" @endif><a href="{{ route('relatorios.listaGeral') }}"><span>Lista Geral</span></a></li>
+                    <li @if($titPagina == 'Relatórios') class="active" @endif><a href="{{ route('relatorios.marcacaoProva') }}"><span>Marcação da Prova</span></a></li>
+                    <li @if($titPagina == 'Relatórios') class="active" @endif><a href="{{ route('relatorios.ficha') }}"><span>Ficha do Competidor</span></a></li>
                 </ul>
             </li>
         </ul>

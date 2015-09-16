@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Anouar\Fpdf\Fpdf;
 use App\Competidor;
 use App\Evento;
 use App\Inscricao;
@@ -95,4 +96,5 @@ class SorteiosController extends Controller
         $this->toast->message('Pontuação realizada com sucesso: Inscrição: ' . $this->data['inscricao']['id'], 'success');
         return view('sorteios.visualizar')->with($this->data);
     }
+
 }

@@ -59,3 +59,14 @@ Route::group(['prefix' => 'sorteios', 'middleware' => 'auth'], function() {
     Route::get('visualizar/editar/{id}', ['as' => 'sorteios.visualizar.editar', 'uses' => 'SorteiosController@editar']);
     Route::post('salvar', ['as' => 'sorteios.salvar', 'uses' => 'SorteiosController@salvar']);
 });
+
+Route::group(['prefix' => 'relatorios', 'middleware' => 'auth'], function() {
+
+    Route::get('teste', ['as' => 'relatorios.teste', 'uses' => 'RelatoriosController@teste']);
+    Route::get('listaGeral', ['as' => 'relatorios.listaGeral', 'uses' => 'RelatoriosController@listaGeral']);
+    Route::get('marcacaoProva', ['as' => 'relatorios.marcacaoProva', 'uses' => 'RelatoriosController@marcacaoProva']);
+    Route::get('ficha', ['as' => 'relatorios.ficha', 'uses' => 'RelatoriosController@ficha']);
+
+});
+
+
