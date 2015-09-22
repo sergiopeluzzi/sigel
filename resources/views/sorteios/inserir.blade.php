@@ -37,13 +37,13 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-3">
-                            {!! Form::open(['route' => 'sorteios.salvar', 'method' => 'post']) !!}
+                            {!! Form::model($provas, ['route' => ['sorteios.salvar', $provas->first()->Id], 'method' => 'put']) !!}
                                 {!! Form::input('hidden', 'idinscricao', $inscricao->id) !!}
                                 @foreach($provas as $prova)
                                     <div class="row center-block">
                                         <div class="text-center">
                                             {!! Form::label($prova->boi, $prova->boi) !!}
-                                            {!! Form::input('number', $prova->boi, null, ['class' => 'form-control']) !!} (segundos)
+                                            {!! Form::input('number', $prova->boi, null, ['class' => 'form-control', 'step' => 'any']) !!} (segundos)
                                         </div>
                                     </div>
                                 <br/>
@@ -51,7 +51,7 @@
                             <div class="row center-block">
                                 <div class="text-center">
                                     {!! Form::label('boifinal', 'Boi Final') !!}
-                                    {!! Form::text('boifinal', null, ['class' => 'form-control']) !!} (segundos)
+                                    {!! Form::input('number', 'boifinal', null, ['class' => 'form-control', 'step' => 'any']) !!} (segundos)
                                 </div>
                             </div>
                             <br/>

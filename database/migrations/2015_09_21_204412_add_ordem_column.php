@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddEventosQntdeboisColumn extends Migration
+class AddOrdemColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class AddEventosQntdeboisColumn extends Migration
      */
     public function up()
     {
-        Schema::table('eventos', function (Blueprint $table) {
-            $table->integer('qntdebois')->after('maxnuminscricoescommesmocompetidor');
+        Schema::table('provas', function (Blueprint $table) {
+            $table->integer('ordem')->after('idinscricao');
         });
     }
 
@@ -24,8 +24,8 @@ class AddEventosQntdeboisColumn extends Migration
      */
     public function down()
     {
-        Schema::table('eventos', function (Blueprint $table) {
-            $table->dropColumn('qntdebois');
+        Schema::table('provas', function (Blueprint $table) {
+            $table->dropColumn('ordem');
         });
     }
 }

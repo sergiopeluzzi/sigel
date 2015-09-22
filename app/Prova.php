@@ -9,7 +9,9 @@ class Prova extends Model
     protected $table = 'provas';
 
     protected $fillable = [
+        'idEvento',
         'idinscricao',
+        'ordem',
         'boi',
         'pontuacao'
     ];

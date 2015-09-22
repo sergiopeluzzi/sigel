@@ -37,6 +37,8 @@
     </table>
     <table name="inscricoes" schema="" catalog="homestead" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ordemInscricao" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ordemCompeticao" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="idevento" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="idcompetidorcabeca" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="idcompetidorpe" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -57,7 +59,9 @@
     </table>
     <table name="provas" schema="" catalog="homestead" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idEvento" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="idinscricao" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ordem" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="boi" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="pontuacao" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
       <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>

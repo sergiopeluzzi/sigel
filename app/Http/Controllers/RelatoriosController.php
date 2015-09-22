@@ -85,7 +85,7 @@ class RelatoriosController extends Controller
     public function imprimirMarcacaoProva(Request $request)
     {
         $evento = $this->evento->find($request->get('idevento'));
-        $inscricoes = $this->inscricao->where('idevento', $evento->id)->get();
+        $inscricoes = $this->inscricao->where('idevento', $evento->id)->orderBy('ordemCompeticao', 'asc')->get();
 
         $fpdf = new Fpdf();
         $fpdf->AddPage('L');
@@ -94,8 +94,9 @@ class RelatoriosController extends Controller
         $fpdf->Cell(0, 15,'Marcação da Prova: ' . $evento->nome, 0, 1, 'C');
         //Cabeçalho
         $fpdf->SetFont('Arial','B',10);
-        $fpdf->Cell(60,5,'Cabeça', 1, 0, 'C');
-        $fpdf->Cell(60,5,'Pé', 1, 0, 'C');
+        $fpdf->Cell(10,5,'Ord', 1, 0, 'C');
+        $fpdf->Cell(55,5,'Cabeça', 1, 0, 'C');
+        $fpdf->Cell(55,5,'Pé', 1, 0, 'C');
         $fpdf->Cell(10,5,'HT', 1, 0, 'C');
         for ($i = 1; $i <= $evento->qntdebois; $i++) {
             $fpdf->Cell(15, 5, 'Boi ' . $i, 1, 0, 'C');
@@ -104,16 +105,18 @@ class RelatoriosController extends Controller
         //registro
         $fpdf->SetFont('Arial','',10);
         foreach ($inscricoes as $inscricao) {
+            $fpdf->Cell(10, 10, $inscricao->ordemCompeticao . 'º', 1, 0, 'C');
             $fpdf->Cell(10, 10, $this->competidor->find($inscricao->idcompetidorcabeca)->id, 1, 0, 'C');
-            $fpdf->Cell(50, 10, $this->competidor->find($inscricao->idcompetidorcabeca)->nome, 1, 0, 'L');
+            $fpdf->Cell(45, 10, $this->competidor->find($inscricao->idcompetidorcabeca)->nome, 1, 0, 'L');
             $fpdf->Cell(10, 10, $this->competidor->find($inscricao->idcompetidorpe)->id, 1, 0, 'C');
-            $fpdf->Cell(50, 10, $this->competidor->find($inscricao->idcompetidorpe)->nome, 1, 0, 'L');
+            $fpdf->Cell(45, 10, $this->competidor->find($inscricao->idcompetidorpe)->nome, 1, 0, 'L');
             $fpdf->Cell(10, 10, $this->competidor->find($inscricao->idcompetidorcabeca)->handcapcabeca + $this->competidor->find($inscricao->idcompetidorpe)->handcappe , 1, 0, 'C');
             for ($i = 1; $i <= $evento->qntdebois; $i++) {
                 $fpdf->Cell(15, 10, ' ', 1, 0, 'C');
             }
             $fpdf->Cell(15, 10, '', 1, 1, 'C');
         }
+
 
 
         $fpdf->Output();

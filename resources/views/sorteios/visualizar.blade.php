@@ -24,6 +24,7 @@
                         <table id="tbprova" class="table table-hover table-bordered" cellspacing="0" width="100%">
                             <thead class="bg-green-gradient">
                             <tr>
+                                <th class="text-center">Ord</th>
                                 <th class="text-center">HC Total</th>
                                 <th class="text-center" colspan="2">Competidor Cabeça</th>
                                 <th class="text-center" colspan="2">Competidor Pé</th>
@@ -34,15 +35,19 @@
                             <tbody>
                             @foreach($inscricoes as $inscricao)
                                 <tr class="text-nowrap no-margin">
+                                    <td class="text-center" width="5">{{ $inscricao->ordemCompeticao }}</td>
                                     <td class="text-center text-bold lead" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca + \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                     <td class="text-center" width="15">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca }}</td>
                                     <td>{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->apelido }}</td>
                                     <td class="text-center" width="15">{{ \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                     <td>{{ \App\Competidor::find($inscricao->idcompetidorpe)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorpe)->apelido }}</td>
-                                    <td class="text-center text-bold lead">9.8</td>
+                                    <td class="text-center text-bold lead">@if($prova->where('idinscricao', $inscricao->id)->sum('pontuacao') == 0) {{ number_format(0, 2, ',', '.') }} @else {{ number_format($prova->where('idinscricao', $inscricao->id)->sum('pontuacao') / ($prova->where('idinscricao', $inscricao->id)->count() - $prova->where('idinscricao', $inscricao->id)->where('pontuacao', '!=', 0.00)->count()), 2, ',', '.') }}@endif</td>
                                     <td align="center">
-                                        <a data-toggle="tooltip" data-original-title="Inserir tempo" class="btn btn-sm btn-primary" href="{{ route('sorteios.visualizar.inserir', ['id' => $inscricao->id]) }}"><i class="glyphicon glyphicon-time"></i></a>
-                                        <a data-toggle="tooltip" data-original-title="Editar tempo" class="btn btn-sm btn-warning" href="{{ route('sorteios.visualizar.editar', ['id' => $inscricao->id]) }}"><i class="glyphicon glyphicon-list-alt"></i></a>
+                                        @if(true)
+                                            <a data-toggle="tooltip" data-original-title="Inserir tempo" class="btn btn-sm btn-primary" href="{{ route('sorteios.visualizar.inserir', ['id' => $inscricao->id]) }}"><i class="glyphicon glyphicon-time"></i></a>
+                                        @else
+                                            <a data-toggle="tooltip" data-original-title="Editar tempo" class="btn btn-sm btn-warning" href="{{ route('sorteios.visualizar.editar', ['id' => $inscricao->id]) }}"><i class="glyphicon glyphicon-list-alt"></i></a>
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

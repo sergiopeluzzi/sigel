@@ -33,7 +33,7 @@ class SorteiosController extends Controller
 
     public function index()
     {
-        $this->data['eventos'] = $this->evento->orderBy('id', 'desc')->get();;
+        $this->data['eventos'] = $this->evento->orderBy('id', 'desc')->get();
         return view('sorteios.index')->with($this->data);
     }
 
@@ -42,6 +42,7 @@ class SorteiosController extends Controller
         $temp = $request->all();
         $evento = $this->evento->find($temp['idevento']);
         $inscricoes = $this->inscricao->where('idevento', $evento->id)->get();
+        $ordem = 1;
 
         if (empty($this->inscricao->where('idevento', $evento->id)->get()->toArray())) {
             $this->toast->message('Não existem inscrições a serem sorteadas neste evento!', 'error');
@@ -54,14 +55,27 @@ class SorteiosController extends Controller
                 } else {
                     $i = 1;
                     while ($i <= $evento->qntdebois) {
+                        $data['idEvento'] = $temp['idevento'];
                         $data['idinscricao'] = $inscricao->id;
+                        $data['ordem'] = $ordem;
                         $data['boi'] = 'boi'.$i;
                         $data['pontuacao'] = 0.0;
                         $this->prova->create($data);
+                        $ordem++;
                         $i++;
                     }
                 }
             }
+        }
+
+        $max = $this->inscricao->where('idEvento', $temp['idevento'])->count();
+        $c = 1;
+        $ordemUpd = $this->getRandomNumbers($max, 1, $max);
+
+        foreach ($inscricoes as $inscricao) {
+            $inscricao->ordemCompeticao = $ordemUpd[$c-1];
+            $inscricao->update();
+            $c++;
         }
 
         $this->toast->message('Sorteio Realizado com sucesso', 'success');
@@ -70,8 +84,9 @@ class SorteiosController extends Controller
 
     public function visualizar(Request $request)
     {
-        $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->get();
+        $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->orderBy('ordemCompeticao', 'asc')->get();
         $this->data['evento'] = $this->evento->find($request->idevento);
+        $this->data['prova'] = $this->prova->all();
         return view('sorteios.visualizar')->with($this->data);
     }
 
@@ -80,6 +95,7 @@ class SorteiosController extends Controller
         $this->data['inscricao'] = $this->inscricao->find($id);
         $this->data['provas'] = $this->prova->where('idInscricao', $id)->get();
         $this->data['evento'] = $this->evento->find($this->data['inscricao']['idevento']);
+        $this->data['prova'] = $this->prova->find($id);
         return view('sorteios.inserir')->with($this->data);
     }
 
@@ -93,8 +109,63 @@ class SorteiosController extends Controller
         $this->data['inscricao'] = $this->inscricao->find($request->get('idinscricao'));
         $this->data['evento'] = $this->evento->find($this->data['inscricao']['idevento']);
         $this->data['inscricoes'] = $this->inscricao->where('idevento', $this->data['evento']['id'])->get();
+        $this->data['prova'] = $this->prova->all();
+
+        $qntdebois = $this->data['evento']->qntdebois;
+
+        for ($i = 1; $i <= $qntdebois; $i++) {
+            if (!is_null($request->get('boi'.$i))) {
+                $prova = $this->prova->where('idinscricao', $request->get('idinscricao'))->where('boi', 'boi'.$i)->get();
+                $prova[0]->pontuacao = $request->get('boi'.$i);
+                $prova[0]->update();
+            }
+        }
+
         $this->toast->message('Pontuação realizada com sucesso: Inscrição: ' . $this->data['inscricao']['id'], 'success');
         return view('sorteios.visualizar')->with($this->data);
     }
+
+    /**
+     * Generates random numbers
+     *
+     * @author    Paulo Freitas <paulofreitas dot web at gmail dot com>
+     * @copyright Copyright (C) 2006-2010  Paulo Freitas
+     * @license   http://creativecommons.org/licenses/by-sa/3.0
+     * @version   20100107
+     * @param     int $num amount of numbers to generate
+     * @param     int $min minimum number to generate
+     * @param     int $max maximum number to generate
+     * @param     bool $repeat if the numbers can repeat
+     * @param     int|bool $sort if the numbers must be ordered (SORT_ASC to ascending order and SORT_DESC to descending order)
+     * @return    array|bool array of generated numbers or false when invalid conditions
+     */
+    public function getRandomNumbers($num, $min, $max, $repeat = false, $sort = false)
+    {
+        if ((($max - $min) + 1) >= $num) {
+            $numbers = array();
+
+            while (count($numbers) < $num) {
+                $number = mt_rand($min, $max);
+
+                if ($repeat || !in_array($number, $numbers)) {
+                    $numbers[] = $number;
+                }
+            }
+
+            switch ($sort) {
+                case SORT_ASC:
+                    sort($numbers);
+                    break;
+                case SORT_DESC:
+                    rsort($numbers);
+                    break;
+            }
+
+            return $numbers;
+        }
+
+        return false;
+    }
+
 
 }

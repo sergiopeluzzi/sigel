@@ -9,6 +9,8 @@ class Inscricao extends Model
     protected $table = 'inscricoes';
 
     protected $fillable = [
+        'ordemCompeticao',
+        'ordemInscricao',
         'idevento',
         'idcompetidorcabeca',
         'idcompetidorpe'
