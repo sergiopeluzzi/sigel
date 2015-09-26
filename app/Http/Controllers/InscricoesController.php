@@ -41,7 +41,9 @@ class InscricoesController extends Controller
         $qnt = $request->get('qntdeinscricoes');
 
         for($i = 0; $i < $qnt; $i++) {
-            $this->inscricao->create($request->all());
+            $dados = $request->all();
+            $dados['ordemInscricao'] = $this->inscricao->where('idevento', $dados['idevento'])->max('ordemInscricao') + 1;
+            $this->inscricao->create($dados);
         }
         $this->toast->message('Adicionado com sucesso', 'success', "COD. INSCRIÇÃO: {$this->inscricao->latest()->first()->id}");
         return redirect()->route('inscricoes.index');

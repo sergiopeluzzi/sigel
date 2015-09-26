@@ -134,12 +134,20 @@ class RelatoriosController extends Controller
 
     public function imprimirFicha(Request $request)
     {
+
         $dados = $request->all();
+        $valorTotal = 0;
 
         $evento = $this->evento->find($dados['idevento']);
         $competidor = $this->competidor->find($dados['idcompetidor']);
-        $inscricaoCabeca = $this->inscricao->where('idcompetidorcabeca', $competidor->id);
-        $inscricaoPe = $this->inscricao->where('idcompetidorpe', $competidor->id);
+        $inscricaoCabeca = $this->inscricao->where('idcompetidorcabeca', $competidor->id)
+                                           ->where('idevento', $evento->id)
+                                           ->orderBy('ordemCompeticao', 'asc')
+                                           ->get();
+        $inscricaoPe = $this->inscricao->where('idcompetidorpe', $competidor->id)
+                                       ->where('idevento', $evento->id)
+                                       ->orderBy('ordemCompeticao', 'asc')
+                                       ->get();
 
         //dd(array($evento, $competidor, $inscricaoCabeca, $inscricaoPe));
 
@@ -151,13 +159,70 @@ class RelatoriosController extends Controller
         $fpdf->SetFont('Arial','B',14);
         $fpdf->Cell(0, 5,'Evento: ' . $evento->nome, 0, 1, 'L');
         $fpdf->SetFont('Arial','B',14);
-        $fpdf->Cell(0, 5,'Competidor: ' . $competidor->nome . " * " . $competidor->apelido, 0, 1, 'C');
-        //Cabeçalho
+        $fpdf->Cell(0, 5,'Competidor: ' . $competidor->nome . " * " . $competidor->apelido, 0, 1, 'L');
+        $fpdf->Ln();
+        //Cabeçalho kbça
+        $fpdf->SetFont('Arial','B',12);
+        $fpdf->Cell(145,5,'Inscrições Cabeça', 0, 1, 'C');
         $fpdf->SetFont('Arial','B',10);
-        $fpdf->Cell(10,5,'Ord', 1, 0, 'C');
-        $fpdf->Cell(55,5,'Cabeça', 1, 0, 'C');
-        $fpdf->Cell(55,5,'Pé', 1, 0, 'C');
-        $fpdf->Cell(10,5,'HT', 1, 0, 'C');
+        $fpdf->Cell(10, 5,'O.C.', 1, 0, 'C');
+        $fpdf->Cell(10, 5,'O.I.', 1, 0, 'C');
+        $fpdf->Cell(95, 5,'Pé.', 1, 0, 'C');
+        $fpdf->Cell(30, 5,'Valor.', 1, 1, 'C');
+        //Registros kbça
+        $fpdf->SetFont('Arial','',10);
+        foreach($inscricaoCabeca as $inscricao) {
+            $fpdf->Cell(10, 5,$inscricao->ordemCompeticao . 'º', 1, 0, 'C');
+            $fpdf->Cell(10, 5,$inscricao->ordemInscricao, 1, 0, 'C');
+            $pezeiro = $this->competidor->find($inscricao->idcompetidorpe);
+            $fpdf->Cell(95, 5,$pezeiro->id . ' - ' . $pezeiro->nome . " * " . $pezeiro->apelido, 1, 0, 'L');
+            if($inscricao->ordemInscricao <= $evento->qntInscricoesComDesconto) {
+                $fpdf->Cell(30, 5,'R$' . number_format($evento->valorComDesconto, 2 , ',', '.') , 1, 1, 'R');
+                $valorTotal += $evento->valorComDesconto;
+            } else {
+                $fpdf->Cell(30, 5,'R$' . number_format($evento->valor, 2 , ',', '.') , 1, 1, 'R');
+                $valorTotal += $evento->valor;
+            }
+        }
+
+        $fpdf->Ln();
+
+        //Cabeçalho peh
+        $fpdf->SetFont('Arial','B',12);
+        $fpdf->Cell(145,5,'Inscrições Cabeça', 0, 1, 'C');
+        $fpdf->SetFont('Arial','B',10);
+        $fpdf->Cell(10, 5,'O.C.', 1, 0, 'C');
+        $fpdf->Cell(10, 5,'O.I.', 1, 0, 'C');
+        $fpdf->Cell(95, 5,'Pé.', 1, 0, 'C');
+        $fpdf->Cell(30, 5,'Valor.', 1, 1, 'C');
+        //Registros kbça
+        $fpdf->SetFont('Arial','',10);
+        foreach($inscricaoPe as $inscricao) {
+            $fpdf->Cell(10, 5,$inscricao->ordemCompeticao . 'º', 1, 0, 'C');
+            $fpdf->Cell(10, 5,$inscricao->ordemInscricao, 1, 0, 'C');
+            $cabeceiro = $this->competidor->find($inscricao->idcompetidorcabeca);
+            $fpdf->Cell(95, 5,$cabeceiro->id . ' - ' . $cabeceiro->nome . " * " . $cabeceiro->apelido, 1, 0, 'L');
+            if($inscricao->ordemInscricao <= $evento->qntInscricoesComDesconto) {
+                $fpdf->Cell(30, 5,'R$' . number_format($evento->valorComDesconto, 2 , ',', '.') , 1, 1, 'R');
+                $valorTotal += $evento->valorComDesconto;
+            } else {
+                $fpdf->Cell(30, 5,'R$' . number_format($evento->valor, 2 , ',', '.') , 1, 1, 'R');
+                $valorTotal += $evento->valor;
+            }
+        }
+
+        $fpdf->Ln();
+        $fpdf->SetFont('Arial','B',12);
+        $fpdf->Cell(115, 5,'Total:', 1, 0, 'R');
+        $fpdf->Cell(30, 5,'R$ ' . number_format($valorTotal, 2, ',', '.'), 1, 1, 'R');
+
+
+
+        $fpdf->SetY(-26);
+        $fpdf->SetFont('Arial','',8);
+        $fpdf->Cell(0, 5,'O.C. = Ordem de Competição/Corrida | O.I = Ordem de Inscrição', 0, 0, 'R');
+
+
 
         $fpdf->Output();
         exit;
