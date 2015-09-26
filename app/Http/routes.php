@@ -64,9 +64,11 @@ Route::group(['prefix' => 'relatorios', 'middleware' => 'auth'], function() {
 
     Route::get('teste', ['as' => 'relatorios.teste', 'uses' => 'RelatoriosController@teste']);
     Route::get('listaGeral', ['as' => 'relatorios.listaGeral', 'uses' => 'RelatoriosController@listaGeral']);
+    Route::post('listaGeral/imprimir', ['as' => 'relatorios.imprimirListaGeral', 'uses' => 'RelatoriosController@imprimirListaGeral']);
     Route::get('marcacaoProva', ['as' => 'relatorios.marcacaoProva', 'uses' => 'RelatoriosController@marcacaoProva']);
     Route::post('marcacaoProva/imprimir', ['as' => 'relatorios.imprimirMarcacaoProva', 'uses' => 'RelatoriosController@imprimirMarcacaoProva']);
     Route::get('ficha', ['as' => 'relatorios.ficha', 'uses' => 'RelatoriosController@ficha']);
+    Route::post('ficha/imprimir', ['as' => 'relatorios.imprimirFicha', 'uses' => 'RelatoriosController@imprimirFicha']);
 
 });
 

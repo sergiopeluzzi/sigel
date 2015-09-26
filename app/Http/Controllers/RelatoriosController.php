@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use PhpSpec\Exception\Exception;
 
 class RelatoriosController extends Controller
 {
@@ -40,20 +41,22 @@ class RelatoriosController extends Controller
         exit;
     }
 
-    public function imprimelistaGeral()
-    {
-
-    }
-
     public function listaGeral()
     {
-        $competidores = $this->competidor->all();
+        return view('relatorios.listageral')->with($this->data);
+    }
+
+    public function imprimirListaGeral(Request $request)
+    {
+        $filtro = $request->get('order');
+
+        $competidores = $this->competidor->orderBy($filtro, 'asc')->get();
 
         $fpdf = new Fpdf();
         $fpdf->AddPage();
         //Titulo
         $fpdf->SetFont('Arial','B',16);
-        $fpdf->Cell(0, 15,'Lista geral dos competidores', 0, 1, 'C');
+        $fpdf->Cell(0, 15,"Lista geral dos competidores", 0, 1, 'C');
         //Cabeçalho
         $fpdf->SetFont('Arial','B',10);
         $fpdf->Cell(10,5,'Id', 1, 0, 'C');
@@ -71,9 +74,10 @@ class RelatoriosController extends Controller
             $fpdf->Cell(30,5,$competidor->handcappe, 1, 1, 'C');
         }
 
+        $fpdf->Cell(0,5,"(ordenado por: $filtro)", 0, 1, 'R');
+
         $fpdf->Output();
         exit;
-
     }
 
     public function marcacaoProva()
@@ -117,16 +121,43 @@ class RelatoriosController extends Controller
             $fpdf->Cell(15, 10, '', 1, 1, 'C');
         }
 
-
-
         $fpdf->Output();
         exit;
     }
 
     public function ficha()
     {
+        $this->data['eventos'] = $this->evento->orderBy('id', 'desc')->get();
+        $this->data['competidores'] = $this->competidor->orderBy('nome', 'asc')->get();
+        return view('relatorios.ficha')->with($this->data);
+    }
+
+    public function imprimirFicha(Request $request)
+    {
+        $dados = $request->all();
+
+        $evento = $this->evento->find($dados['idevento']);
+        $competidor = $this->competidor->find($dados['idcompetidor']);
+        $inscricaoCabeca = $this->inscricao->where('idcompetidorcabeca', $competidor->id);
+        $inscricaoPe = $this->inscricao->where('idcompetidorpe', $competidor->id);
+
+        //dd(array($evento, $competidor, $inscricaoCabeca, $inscricaoPe));
+
         $fpdf = new Fpdf();
         $fpdf->AddPage();
+        //Titulo
+        $fpdf->SetFont('Arial','B',16);
+        $fpdf->Cell(0, 15,'Ficha do Competidor', 0, 1, 'C');
+        $fpdf->SetFont('Arial','B',14);
+        $fpdf->Cell(0, 5,'Evento: ' . $evento->nome, 0, 1, 'L');
+        $fpdf->SetFont('Arial','B',14);
+        $fpdf->Cell(0, 5,'Competidor: ' . $competidor->nome . " * " . $competidor->apelido, 0, 1, 'C');
+        //Cabeçalho
+        $fpdf->SetFont('Arial','B',10);
+        $fpdf->Cell(10,5,'Ord', 1, 0, 'C');
+        $fpdf->Cell(55,5,'Cabeça', 1, 0, 'C');
+        $fpdf->Cell(55,5,'Pé', 1, 0, 'C');
+        $fpdf->Cell(10,5,'HT', 1, 0, 'C');
 
         $fpdf->Output();
         exit;

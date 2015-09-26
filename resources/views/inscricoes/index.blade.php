@@ -37,7 +37,7 @@
                                     <label for="idcompetidorcabeca">Competidor Cabeça:</label>
                                     <select id="idcompetidorcabeca" name="idcompetidorcabeca" class="form-control">
                                         @foreach($competidores as $competidor)
-                                            <option value="{{ $competidor->id }}">{{ $competidor->id . ' - ' . $competidor->nome}}</option>
+                                            <option value="{{ $competidor->id }}">{{ $competidor->id . ' - ' . $competidor->nome . ' * ' . $competidor->apelido }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -45,7 +45,7 @@
                                     <label for="idcompetidorpe">Competidor Pé:</label>
                                     <select id="idcompetidorpe" name="idcompetidorpe" class="form-control">
                                         @foreach($competidores as $competidor)
-                                            <option value="{{ $competidor->id }}">{{ $competidor->id . ' - ' . $competidor->nome}}</option>
+                                            <option value="{{ $competidor->id }}">{{ $competidor->id . ' - ' . $competidor->nome . ' * ' . $competidor->apelido }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -89,8 +89,8 @@
                                         <tr>
                                             <td class="text-center">{{ $inscricao->id }}</td>
                                             <td>{{ $inscricao->idevento . ' - ' . \App\Evento::find($inscricao->idevento)->nome }}</td>
-                                            <td>{{ $inscricao->idcompetidorcabeca . ' - ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->nome }}</td>
-                                            <td>{{ $inscricao->idcompetidorpe . ' - ' . \App\Competidor::find($inscricao->idcompetidorpe)->nome}}</td>
+                                            <td>{{ $inscricao->idcompetidorcabeca . ' - ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->apelido }}</td>
+                                            <td>{{ $inscricao->idcompetidorpe . ' - ' . \App\Competidor::find($inscricao->idcompetidorpe)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorpe)->apelido }}</td>
                                             <td class="text-center">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca + \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                             <td align="center">
                                                 <a data-toggle="modal" data-target="#confirm-delete" class="btn btn-sm btn-danger" href="#" data-href="{{ route('inscricoes.destroy', ['id' => $inscricao->id]) }}"><i class="glyphicon glyphicon-remove"></i></a>

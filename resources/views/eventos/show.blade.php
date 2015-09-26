@@ -47,6 +47,18 @@
                                     <td>{{ $evento->datafim->format('d/m/Y') }}</td>
                                 </tr>
                                 <tr>
+                                    <td>Valor:</td>
+                                    <td>R$ {{ number_format($evento->valor, 2, ',', '.') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Valor com desconto:</td>
+                                    <td>R$ {{ number_format($evento->valorComDesconto, 2, ',', '.') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Quantidade de inscrições com desconto:</td>
+                                    <td>{{ $evento->qntInscricoesComDesconto }}</td>
+                                </tr>
+                                <tr>
                                     <td>Número máximo de inscrições:</td>
                                     <td>{{ $evento->maxnuminscricoes }}</td>
                                 </tr>

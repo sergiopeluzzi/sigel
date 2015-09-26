@@ -30,6 +30,25 @@
 
 <div class="row">
     <div class="col-xs-3">
+        {!! Form::label('valor', 'Valor (R$)') !!}
+        {!! Form::input('number', 'valor', null, ['class' => 'form-control', 'step' => 'any']) !!}
+    </div>
+
+    <div class="col-xs-3">
+        {!! Form::label('valorComDesconto', 'Valor com desconto (R$)') !!}
+        {!! Form::input('number', 'valorComDesconto', null, ['class' => 'form-control', 'step' => 'any']) !!}
+    </div>
+
+    <div class="col-xs-3">
+        {!! Form::label('qntInscricoesComDesconto', 'Qnt de Inscrições com desconto') !!}
+        {!! Form::input('number', 'qntInscricoesComDesconto', null, ['class' => 'form-control']) !!}
+    </div>
+</div>
+
+<br/>
+
+<div class="row">
+    <div class="col-xs-3">
         {!! Form::label('maxnuminscricoes', 'Max Inscrições:*') !!}
         {!! Form::input('number', 'maxnuminscricoes', null,
         ['class' => 'form-control',
