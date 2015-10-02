@@ -58,6 +58,7 @@ Route::group(['prefix' => 'sorteios', 'middleware' => 'auth'], function() {
     Route::get('visualizar/inserir/{id}', ['as' => 'sorteios.visualizar.inserir', 'uses' => 'SorteiosController@inserir']);
     Route::get('visualizar/editar/{id}', ['as' => 'sorteios.visualizar.editar', 'uses' => 'SorteiosController@editar']);
     Route::put('salvar', ['as' => 'sorteios.salvar', 'uses' => 'SorteiosController@salvar']);
+    Route::post('deletar', ['as' => 'sorteios.deletar', 'uses' => 'SorteiosController@deletar']);
 });
 
 Route::group(['prefix' => 'relatorios', 'middleware' => 'auth'], function() {

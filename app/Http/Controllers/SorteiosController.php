@@ -82,6 +82,22 @@ class SorteiosController extends Controller
         return redirect()->route('sorteios.index');
     }
 
+    public function deletar(Request $request)
+    {
+        $evento = $this->evento->find($request->get('idevento'));
+
+        if (empty($this->prova->where('idEvento', $evento->id)->get()->toArray())) {
+            $this->toast->message('Esse evento não foi sorteado!', 'info');
+            return redirect()->route('sorteios.index');
+        } else {
+            foreach ($this->prova->where('idEvento', $evento->id)->get() as $prova) {
+                $prova->delete();
+            }
+            $this->toast->message('Sorteio Excluido com sucesso!', 'error');
+            return redirect()->route('sorteios.index');
+        }
+    }
+
     public function visualizar(Request $request)
     {
         $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->orderBy('ordemCompeticao', 'asc')->get();

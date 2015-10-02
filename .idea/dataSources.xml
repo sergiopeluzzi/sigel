@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1549242644">
+  <component name="DataSourceManagerImpl" format="xml" hash="53314683">
     <data-source source="LOCAL" name="MySQL - homestead@localhost" uuid="7a88dba9-2e83-4266-9b51-47a7ad5076ec">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -9,8 +9,8 @@
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
+        <property name="characterEncoding" value="utf-8" />
+        <property name="characterSetResults" value="utf-8" />
         <property name="yearIsDateType" value="false" />
       </driver-properties>
       <libraries />

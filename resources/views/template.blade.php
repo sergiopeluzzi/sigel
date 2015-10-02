@@ -31,7 +31,8 @@
     <![endif]-->
 </head>
 <body class="skin-green">
-<div class="wrapper">
+
+<div id="tudo" class="wrapper">
 
     <!-- Header -->
     @include('header')
@@ -55,7 +56,6 @@
     @include('footer')
 
 </div>
-
 <!-- jQuery 2.1.3 -->
 <script src="{{ asset('/bower_components/admin-lte/plugins/jQuery/jQuery-2.1.4.min.js') }}" type="text/javascript"></script>
 <!-- jQuery UI -->
@@ -79,6 +79,5 @@
 <script src="{{ asset('/bower_components/admin-lte/plugins/select2-4.0.0/dist/js/select2.min.js') }}" type="text/javascript" ></script>
 <!-- JS SCRIPTS -->
 @yield('scripts')
-
 </body>
 </html>
