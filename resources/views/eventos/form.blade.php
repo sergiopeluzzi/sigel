@@ -88,7 +88,7 @@
         'data-content' => 'Número máximo de inscrições do competidor com o mesmo parceiro']) !!}
     </div>
 </div>
-<p class="text-red pull-right"><b>*Deixe em branco ou 0 (zero) para ilimitado</b></p>
+<p class="text-red pull-right"><b>*Insira 0 (zero) para ilimitado</b></p>
 <br/>
 <div class="row">
     <div class="col-xs-3">
@@ -99,6 +99,15 @@
         'data-trigger' => 'focus',
         'data-placement' => 'top',
         'data-content' => 'Quantidade provas/bois antes da prova/boi final']) !!}
+    </div>
+    <div class="col-xs-3">
+        {!! Form::label('pulaquantos', 'Distância de corrida') !!}
+        {!! Form::input('number', 'pulaquantos', null,
+        ['class' => 'form-control',
+        'data-toggle' => 'popover',
+        'data-trigger' => 'focus',
+        'data-placement' => 'top',
+        'data-content' => 'Diferença entre uma corrida e outra da mesma inscrição']) !!}
     </div>
 </div>
 <br>

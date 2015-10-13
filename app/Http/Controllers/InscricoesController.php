@@ -38,11 +38,30 @@ class InscricoesController extends Controller
 
     public function inscrever(InscricoesRequest $request)
     {
-        $qnt = $request->get('qntdeinscricoes');
+        $evento = $this->evento->find($request->get('idevento'));
+        $qntDeInscricoes = $request->get('qntdeinscricoes');
+        $qntInscricoesEvento = $this->inscricao->where('idevento', $evento->id)->count();
+        $qntInscricoesCabeca = $this->inscricao->where('idcompetidorcabeca', $request->get('idcompetidorcabeca'))->where('idevento', $evento->id)->count();
+        $qntInscricoesPe = $this->inscricao->where('idcompetidorpe', $request->get('idcompetidorpe'))->where('idevento', $evento->id)->count();
 
-        for($i = 0; $i < $qnt; $i++) {
+
+        if ($request->get('idcompetidorcabeca') == $request->get('idcompetidorpe')) {
+            $this->toast->message('Competidor cabeça e Competidor pé não podem ser iguais!', 'error', 'Falha ao inscrever');
+            return redirect()->route('inscricoes.index');
+        }
+
+        if (($qntInscricoesEvento + $qntDeInscricoes) > $evento->maxnuminscricoes) {
+            $this->toast->message('Número de inscrições excede a quantidade permitida pelo evento!', 'error', 'Falha ao inscrever');
+            return redirect()->route('inscricoes.index');
+        }
+
+
+
+        for($i = 0; $i < $qntDeInscricoes; $i++) {
             $dados = $request->all();
+            $m = $this->inscricao->where('idevento', $dados['idevento'])->max('ordemCompeticao');
             $dados['ordemInscricao'] = $this->inscricao->where('idevento', $dados['idevento'])->max('ordemInscricao') + 1;
+            $dados['ordemCompeticao'] = $m == 0 ? 1 : $m + $this->evento->find($dados['idevento'])->pulaquantos;
             $this->inscricao->create($dados);
         }
         $this->toast->message('Adicionado com sucesso', 'success', "COD. INSCRIÇÃO: {$this->inscricao->latest()->first()->id}");

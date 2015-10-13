@@ -78,6 +78,10 @@
                                     <td>Número de provas/bois:</td>
                                     <td>{{ $evento->qntdebois }}</td>
                                 </tr>
+                                <tr>
+                                    <td>Distância entre as corridas:</td>
+                                    <td>{{ $evento->pulaquantos }}</td>
+                                </tr>
                             </tbody>
                         </table>
 

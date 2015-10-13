@@ -49,5 +49,6 @@
         $("#maxnuminscricoesporhandcap").popover();
         $("#maxnuminscricoescommesmocompetidor").popover();
         $("#qntdebois").popover();
+        $("#pulaquantos").popover();
     </script>
 @stop

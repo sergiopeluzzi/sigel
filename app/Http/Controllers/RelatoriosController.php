@@ -161,12 +161,12 @@ class RelatoriosController extends Controller
         $fpdf->Ln();
         //Cabeçalho kbça
         $fpdf->SetFont('Arial','B',12);
-        $fpdf->Cell(145,5,'Inscrições Cabeça', 0, 1, 'C');
+        $fpdf->Cell(145,5,'Inscrito como Cabeça', 0, 1, 'C');
         $fpdf->SetFont('Arial','B',10);
         $fpdf->Cell(10, 5,'O.C.', 1, 0, 'C');
         $fpdf->Cell(10, 5,'O.I.', 1, 0, 'C');
-        $fpdf->Cell(95, 5,'Pé.', 1, 0, 'C');
-        $fpdf->Cell(30, 5,'Valor.', 1, 1, 'C');
+        $fpdf->Cell(95, 5,'Competidor Pé', 1, 0, 'C');
+        $fpdf->Cell(30, 5,'Valor', 1, 1, 'C');
         //Registros kbça
         $fpdf->SetFont('Arial','',10);
         foreach($inscricaoCabeca as $inscricao) {
@@ -187,12 +187,12 @@ class RelatoriosController extends Controller
 
         //Cabeçalho peh
         $fpdf->SetFont('Arial','B',12);
-        $fpdf->Cell(145,5,'Inscrições Pé', 0, 1, 'C');
+        $fpdf->Cell(145,5,'Inscrito como Pé', 0, 1, 'C');
         $fpdf->SetFont('Arial','B',10);
         $fpdf->Cell(10, 5,'O.C.', 1, 0, 'C');
         $fpdf->Cell(10, 5,'O.I.', 1, 0, 'C');
-        $fpdf->Cell(95, 5,'Pé.', 1, 0, 'C');
-        $fpdf->Cell(30, 5,'Valor.', 1, 1, 'C');
+        $fpdf->Cell(95, 5,'Competidor Cabeça', 1, 0, 'C');
+        $fpdf->Cell(30, 5,'Valor', 1, 1, 'C');
         //Registros Pé
         $fpdf->SetFont('Arial','',10);
         foreach($inscricaoPe as $inscricao) {

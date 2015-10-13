@@ -21,7 +21,8 @@ class Evento extends Model
         'maxnuminscricoesporpessoa',
         'maxnuminscricoesporhandcap',
         'maxnuminscricoescommesmocompetidor',
-        'qntdebois'
+        'qntdebois',
+        'pulaquantos'
     ];
 
     protected $dates = [

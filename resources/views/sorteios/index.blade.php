@@ -35,12 +35,14 @@
                             <br/>
                             <div class="row">
                                 <div class="container">
+                                    <!--
                                     <button type="submit" class="btn btn-lg btn-success" value="Processar" formaction="{{ route('sorteios.processar') }}">
                                         <i class="glyphicon glyphicon-refresh"></i> Processar Sorteio
                                     </button>
                                     <button type="submit" class="btn btn-lg btn-danger" value="Deletar" formaction="{{ route('sorteios.deletar') }}">
                                         <i class="glyphicon glyphicon-erase"></i> Apagar Sorteio
                                     </button>
+                                    -->
                                     <button type="submit" class="btn btn-lg btn-info" value="Visualizar" formaction="{{ route('sorteios.visualizar') }}">
                                         <i class="glyphicon glyphicon-th"></i> Visualizar Prova
                                     </button>
