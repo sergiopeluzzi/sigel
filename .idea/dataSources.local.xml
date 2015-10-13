@@ -2,10 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="MySQL - homestead@localhost" uuid="7a88dba9-2e83-4266-9b51-47a7ad5076ec">
-      <secret-storage>master_key</secret-storage>
       <user-name>homestead</user-name>
-      <schema-pattern>homestead.*</schema-pattern>
-      <default-schemas>homestead.*</default-schemas>
     </data-source>
   </component>
 </project>
