@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="136d0546-2193-41cd-ba7f-83eda433de5d" name="Default" comment="Ajustado o processo de inscricao">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/inscricoes/inscricoes.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/relatorios/listaprova.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InscricoesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InscricoesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/inscricoes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/inscricoes/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/sidebar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sigel.iws" />
@@ -346,6 +339,8 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/app/Http/routes.php&#10;Sorte&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;ad&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/public/bower_components/admin-lte/dist/css/AdminLTE.css&#10;inde&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/index.blade.php&#10;InscricoesCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;sorteio&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;fpd&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/vendor/anouar/fpdf/src/Anouar/Fpdf/Fpdf.php&#10;ma&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/relatorios/marcacaoprova.blade.php&#10;index.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/inscricoes/index.blade.php&#10;form&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;create&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/create.blade.php&#10;index&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/index.blade.php&#10;rela&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/RelatoriosController.php&#10;show&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/show.blade.php&#10;inserir&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/inserir.blade.php&#10;prova&#9;null&#9;null&#10;pro&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/relatorios/marcacaoprova.blade.php&#10;eventos/fo&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;Evento&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;EventoRe&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/EventosRequest.php&#10;Eventos&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;edit.bla&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;edit&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/editar.blade.php&#10;inseri&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/inserir.blade.php&#10;templ&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/template.blade.php&#10;Competi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;Inscricao&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Inscricao.php&#10;Prova&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Prova.php&#10;Pro&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Prova.php&#10;listage&#9;null&#9;null&#10;inse&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/inserir.blade.php&#10;visualiz&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;Inscri&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;form.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;visu&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;Sorteios&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;Relato&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/config/app.php&#10;si&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sidebar.blade.php&#10;EventosCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;route&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/routes.php&#10;sorte&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;Competidores&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;EventosContr&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;side&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sidebar.blade.php&#10;ProvasRe&#9;null&#9;null&#10;Service&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Providers/RouteServiceProvider.php&#10;edi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;sho.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/show.blade.php&#10;eventosRe&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/EventosRequest.php" />
     <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -398,6 +393,13 @@
       <option name="number" value="Default" />
       <updated>1438650823464</updated>
     </task>
+    <task id="LOCAL-00001" summary="Ajustado o processo de inscricao">
+      <created>1444837050190</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1444837050190</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
