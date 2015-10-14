@@ -45,6 +45,7 @@ Route::group(['prefix' => 'eventos', 'middleware' => 'auth'], function() {
 Route::group(['prefix' => 'inscricoes', 'middleware' => 'auth'], function() {
 
     Route::get('/', ['as' => 'inscricoes.index', 'uses' => 'InscricoesController@index']);
+    Route::get('inscricoes', ['as' => 'inscricoes.inscricoes', 'uses' => 'InscricoesController@inscricoes']);
     Route::post('inscrever', ['as' => 'inscricoes.inscrever', 'uses' => 'InscricoesController@inscrever']);
     Route::get('destroy/{id}', ['as' => 'inscricoes.destroy', 'uses' => 'InscricoesController@destroy']);
 
@@ -70,6 +71,8 @@ Route::group(['prefix' => 'relatorios', 'middleware' => 'auth'], function() {
     Route::post('marcacaoProva/imprimir', ['as' => 'relatorios.imprimirMarcacaoProva', 'uses' => 'RelatoriosController@imprimirMarcacaoProva']);
     Route::get('ficha', ['as' => 'relatorios.ficha', 'uses' => 'RelatoriosController@ficha']);
     Route::post('ficha/imprimir', ['as' => 'relatorios.imprimirFicha', 'uses' => 'RelatoriosController@imprimirFicha']);
+    Route::get('listaProva', ['as' => 'relatorios.listaProva', 'uses' => 'RelatoriosController@listaProva']);
+    Route::post('listaProva/imprimir', ['as' => 'relatorios.imprimirListaProva', 'uses' => 'RelatoriosController@imprimirListaProva']);
 
 });
 

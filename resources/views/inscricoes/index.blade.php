@@ -6,7 +6,7 @@
             <div class="col-xs-11">
                 <div class="panel bg-gray">
                     <div class="panel-heading">
-
+                        <h3>Selecione o Evento</h3>
                     </div>
 
                     @if($errors->any())
@@ -20,87 +20,27 @@
                     @endif
 
                     <div class="panel-body">
-                        {!! Form::open(['route' => 'inscricoes.inscrever', 'method' => 'post']) !!}
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <label for="idevento">Evento:</label>
-                                    <select id="idevento" name="idevento" class="form-control">
-                                        @foreach($eventos as $evento)
-                                            <option value="{{ $evento->id }}">{{ $evento->id . ' - ' . $evento->nome }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <label for="idcompetidorcabeca">Competidor Cabeça:</label>
-                                    <select id="idcompetidorcabeca" name="idcompetidorcabeca" class="form-control">
-                                        @foreach($competidores as $competidor)
-                                            <option value="{{ $competidor->id }}">{{ $competidor->id . ' - ' . $competidor->nome . ' * ' . $competidor->apelido }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-xs-6">
-                                    <label for="idcompetidorpe">Competidor Pé:</label>
-                                    <select id="idcompetidorpe" name="idcompetidorpe" class="form-control">
-                                        @foreach($competidores as $competidor)
-                                            <option value="{{ $competidor->id }}">{{ $competidor->id . ' - ' . $competidor->nome . ' * ' . $competidor->apelido }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-xs-2">
-                                    <label for="qntdeinscricoes">N. Inscrições:</label>
-                                    <select id="qntdeinscricoes" name="qntdeinscricoes" class="form-control">
-                                        @for($i = 1; $i <= 50; $i++)
-                                            <option value="{{ $i }}">{{ $i }}</option>
-                                        @endfor
-                                    </select>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-xs-2">
-                                    <button type="submit" class="btn btn-lg btn-success" value="Salvar">
-                                        <i class="glyphicon glyphicon-pencil"></i> Inscrever
-                                    </button>
-                                </div>
-                            </div>
-                        {!! Form::close() !!}
-                        <br/>
+                        {!! Form::open(['method' => 'get']) !!}
                         <div class="row">
-                            <div class="col-xs-12">
-                                <table id="tbinscricoes" class="table table-hover text-nowrap" cellspacing="0" width="100%">
-                                    <thead class="bg-green-gradient">
-                                    <tr>
-                                        <th class="text-center">Inscrição</th>
-                                        <th class="text-center">Evento</th>
-                                        <th class="text-center">Competidor Cabeça</th>
-                                        <th class="text-center">Competidor Pé</th>
-                                        <th class="text-center">Handcap Total</th>
-                                        <th class="text-center">Ações</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($inscricoes as $inscricao)
-                                        <tr>
-                                            <td class="text-center">{{ $inscricao->id }}</td>
-                                            <td>{{ $inscricao->idevento . ' - ' . \App\Evento::find($inscricao->idevento)->nome }}</td>
-                                            <td>{{ $inscricao->idcompetidorcabeca . ' - ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->apelido }}</td>
-                                            <td>{{ $inscricao->idcompetidorpe . ' - ' . \App\Competidor::find($inscricao->idcompetidorpe)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorpe)->apelido }}</td>
-                                            <td class="text-center">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca + \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
-                                            <td align="center">
-                                                <a data-toggle="modal" data-target="#confirm-delete" class="btn btn-sm btn-danger" href="#" data-href="{{ route('inscricoes.destroy', ['id' => $inscricao->id]) }}"><i class="glyphicon glyphicon-remove"></i></a>
-                                            </td>
-                                        </tr>
+                            <div class="col-xs-6">
+                                <label for="idevento">Evento:</label>
+                                <select id="idevento" name="idevento" class="form-control">
+                                    @foreach($eventos as $evento)
+                                        <option value="{{ $evento->id }}">{{ $evento->id . ' - ' . $evento->nome }}</option>
                                     @endforeach
-                                    </tbody>
-                                </table>
+                                </select>
                             </div>
                         </div>
+                        <br/>
+                        <div class="row">
+                            <div class="container">
+                                <button type="submit" class="btn btn-lg btn-success" value="Processar" formaction="{{ route('inscricoes.inscricoes') }}">
+                                    <i class="glyphicon glyphicon-refresh"></i> Selecionar Evento
+                                </button>
+
+                            </div>
+                        </div>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

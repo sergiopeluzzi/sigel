@@ -214,15 +214,49 @@ class RelatoriosController extends Controller
         $fpdf->Cell(115, 5,'Total:', 1, 0, 'R');
         $fpdf->Cell(30, 5,'R$ ' . number_format($valorTotal, 2, ',', '.'), 1, 1, 'R');
 
-
-
         $fpdf->SetY(-26);
         $fpdf->SetFont('Arial','',8);
         $fpdf->Cell(0, 5,'O.C. = Ordem de Competição/Corrida | O.I = Ordem de Inscrição', 0, 0, 'R');
 
-
-
         $fpdf->Output();
         exit;
+    }
+
+    public function listaProva()
+    {
+        $this->data['eventos'] = $this->evento->orderBy('id', 'desc')->get();
+        return view('relatorios.listaprova')->with($this->data);
+    }
+
+    public function imprimirListaProva(Request $request)
+    {
+        $evento = $this->evento->find($request->get('idevento'));
+        $inscricoes = $this->inscricao->where('idevento', $evento->id)->get();
+        $competidores = $this->competidor->all();
+
+        $fpdf = new Fpdf();
+        $fpdf->AddPage();
+        //Titulo
+        $fpdf->SetFont('Arial','B',16);
+        $fpdf->Cell(0, 15,"Lista de competidores na prova: " . $evento->nome, 0, 1, 'C');
+        //Cabeçalho
+        $fpdf->SetFont('Arial','B',10);
+        $fpdf->Cell(10,5,'Id', 1, 0, 'C');
+        $fpdf->Cell(55,5,'Nome', 1, 0, 'C');
+        $fpdf->Cell(55,5,'Apelido', 1, 0, 'C');
+        $fpdf->Cell(35,5,'Inscrições Cabeça', 1, 0, 'C');
+        $fpdf->Cell(35,5,'Inscrições Pé', 1, 1, 'C');
+        //Registros
+        $fpdf->SetFont('Arial','',10);
+        foreach ($competidores as $competidor) {
+            $fpdf->Cell(10,5,$competidor->id, 1, 0, 'C');
+            $fpdf->Cell(55,5,$competidor->nome, 1);
+            $fpdf->Cell(55,5,$competidor->apelido, 1);
+            $fpdf->Cell(35,5,$inscricoes->where('idcompetidorcabeca', $competidor->id)->where('idevento', $evento->id)->count(), 1, 0, 'C');
+            $fpdf->Cell(35,5,$inscricoes->where('idcompetidorpe', $competidor->id)->where('idevento', $evento->id)->count(), 1, 1, 'C');
+        }
+        $fpdf->Output();
+        exit;
+
     }
 }
