@@ -100,9 +100,14 @@ class SorteiosController extends Controller
 
     public function visualizar(Request $request)
     {
-        $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->orderBy('ordemCompeticao', 'asc')->get();
+        if($request->get('ordem') == 'n') {
+            $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->orderBy('ordemCompeticao', 'asc')->get();
+        } else if ($request->get('ordem') == 'p') {
+            $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->orderBy('ordemCompeticao', 'desc')->orderBy('created_at', 'asc')->get();
+        }
         $this->data['evento'] = $this->evento->find($request->idevento);
         $this->data['prova'] = $this->prova->all();
+        $this->data['pos'] = 1;
         return view('sorteios.visualizar')->with($this->data);
     }
 
@@ -126,6 +131,8 @@ class SorteiosController extends Controller
         $this->data['evento'] = $this->evento->find($this->data['inscricao']['idevento']);
         $this->data['inscricoes'] = $this->inscricao->where('idevento', $this->data['evento']['id'])->get();
         $this->data['prova'] = $this->prova->all();
+
+        dd($this->data);
 
         $qntdebois = $this->data['evento']->qntdebois;
 

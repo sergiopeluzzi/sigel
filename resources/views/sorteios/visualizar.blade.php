@@ -35,7 +35,7 @@
                             <tbody>
                             @foreach($inscricoes as $inscricao)
                                 <tr class="text-nowrap no-margin">
-                                    <td class="text-center" width="5">{{ $inscricao->ordemCompeticao }}</td>
+                                    <td class="text-center" width="5">{{ $pos++ }}</td>
                                     <td class="text-center text-bold lead" width="5">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca + \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                     <td class="text-center" width="15">{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->handcapcabeca }}</td>
                                     <td>{{ \App\Competidor::find($inscricao->idcompetidorcabeca)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorcabeca)->apelido }}</td>

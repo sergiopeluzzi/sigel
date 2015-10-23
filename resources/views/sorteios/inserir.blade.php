@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-xs-11">
                 <div class="panel bg-gray">
+                    {!! Form::open(['route' => 'sorteios.salvar', 'method' => 'post']) !!}
                     <div class="panel-heading">
                         <h2>Inscrição: <b>{{ $inscricao->id }}</b></h2>
                         <table class="table table-bordered table-hover">
@@ -35,26 +36,28 @@
                         </table>
                     </div>
                     <div class="panel-body">
-                        <div class="row">
-                            <div class="col-xs-3">
-                            {!! Form::model($provas, ['route' => ['sorteios.salvar', $provas->first()->Id], 'method' => 'put']) !!}
-                                {!! Form::input('hidden', 'idinscricao', $inscricao->id) !!}
-                                @foreach($provas as $prova)
-                                    <div class="row center-block">
-                                        <div class="text-center">
-                                            {!! Form::label($prova->boi, $prova->boi) !!}
-                                            {!! Form::input('number', $prova->boi, null, ['class' => 'form-control', 'step' => 'any']) !!} (segundos)
-                                        </div>
-                                    </div>
-                                <br/>
-                                @endforeach
-                            <div class="row center-block">
-                                <div class="text-center">
-                                    {!! Form::label('boifinal', 'Boi Final') !!}
-                                    {!! Form::input('number', 'boifinal', null, ['class' => 'form-control', 'step' => 'any']) !!} (segundos)
-                                </div>
-                            </div>
-                            <br/>
+
+                        <div class="col-xs-12">
+                            <table class="table table-bordered table-hover">
+                                <thead class="bg-green-gradient">
+                                    <tr>
+                                        @for($i = 1; $i <= $evento->qntdebois; $i++)
+                                            <th>Boi {{$i}}</th>
+                                        @endfor
+                                        <th>Boi Final</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        {!! Form::hidden('idinscricao', $inscricao->id) !!}
+                                        {!! Form::hidden('idevento', $evento->id) !!}
+                                        @for($i = 1; $i <= $evento->qntdebois; $i++)
+                                            <td>{!! Form::text('boi'.$i, isset($prova) ? $prova->where('idInscricao', $inscricao->id)->where('idEvento', $evento->id)->where('boi', 'boi'.$i)->get() : '', ['class' => 'form-control']) !!} </td>
+                                        @endfor
+                                        <td>{!! Form::text('boifinal', null, ['class' => 'form-control']) !!}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="col-xs-5">
                             <br/>
@@ -68,9 +71,10 @@
                             </div>
                         </div>
 
-                        {!! Form::close() !!}
+
                         </div>
                     </div>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

@@ -22,32 +22,34 @@
 
                     <div class="panel-body">
                         {!! Form::open(['method' => 'post']) !!}
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <label for="idevento">Evento:</label>
-                                    <select id="idevento" name="idevento" class="form-control">
-                                        @foreach($eventos as $evento)
-                                            <option value="{{ $evento->id }}">{{ $evento->id . ' - ' . $evento->nome }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="idevento">Evento:</label>
+                                <select id="idevento" name="idevento" class="form-control">
+                                    @foreach($eventos as $evento)
+                                        <option value="{{ $evento->id }}">{{ $evento->id . ' - ' . $evento->nome }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <br/>
-                            <div class="row">
-                                <div class="container">
-                                    <!--
-                                    <button type="submit" class="btn btn-lg btn-success" value="Processar" formaction="{{ route('sorteios.processar') }}">
-                                        <i class="glyphicon glyphicon-refresh"></i> Processar Sorteio
-                                    </button>
-                                    <button type="submit" class="btn btn-lg btn-danger" value="Deletar" formaction="{{ route('sorteios.deletar') }}">
-                                        <i class="glyphicon glyphicon-erase"></i> Apagar Sorteio
-                                    </button>
-                                    -->
-                                    <button type="submit" class="btn btn-lg btn-info" value="Visualizar" formaction="{{ route('sorteios.visualizar') }}">
-                                        <i class="glyphicon glyphicon-th"></i> Visualizar Prova
-                                    </button>
-                                </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="ordem">Ordem da competição:</label>
+                                <select id="ordem" name="ordem" class="form-control">
+                                    <option value="n">Normal</option>
+                                    <option value="p">Invertido</option>
+                                </select>
                             </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="container">
+                                <button type="submit" class="btn btn-lg btn-info" value="Visualizar" formaction="{{ route('sorteios.visualizar') }}">
+                                    <i class="glyphicon glyphicon-th"></i> Visualizar Prova
+                                </button>
+                            </div>
+                        </div>
                         {!! Form::close() !!}
                     </div>
                 </div>

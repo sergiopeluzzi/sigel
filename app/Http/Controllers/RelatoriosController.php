@@ -89,7 +89,11 @@ class RelatoriosController extends Controller
     public function imprimirMarcacaoProva(Request $request)
     {
         $evento = $this->evento->find($request->get('idevento'));
-        $inscricoes = $this->inscricao->where('idevento', $evento->id)->orderBy('ordemCompeticao', 'asc')->get();
+        if($request->get('ordem') == 'p') {
+            $inscricoes = $this->inscricao->where('idevento', $evento->id)->orderBy('ordemCompeticao', 'desc')->orderBy('created_at', 'asc')->get();
+        } else if ($request->get('ordem') == 'n') {
+            $inscricoes = $this->inscricao->where('idevento', $evento->id)->orderBy('ordemCompeticao', 'asc')->orderBy('created_at', 'asc')->get();
+        }
 
         $fpdf = new Fpdf();
         $fpdf->AddPage('L');
@@ -108,8 +112,9 @@ class RelatoriosController extends Controller
         $fpdf->Cell(18, 5, 'Final', 1, 1, 'C');
         //registro
         $fpdf->SetFont('Arial','',10);
+        $pos = 1;
         foreach ($inscricoes as $inscricao) {
-            $fpdf->Cell(10, 12, $inscricao->ordemCompeticao . 'º', 1, 0, 'C');
+            $fpdf->Cell(10, 12, $pos . 'º', 1, 0, 'C');
             $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorcabeca)->id, 1, 0, 'C');
             $fpdf->Cell(45, 12, $this->competidor->find($inscricao->idcompetidorcabeca)->nome, 1, 0, 'L');
             $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorpe)->id, 1, 0, 'C');
@@ -119,6 +124,7 @@ class RelatoriosController extends Controller
                 $fpdf->Cell(18, 12, ' ', 1, 0, 'C');
             }
             $fpdf->Cell(18, 12, '', 1, 1, 'C');
+            $pos++;
         }
 
         $fpdf->Output();
