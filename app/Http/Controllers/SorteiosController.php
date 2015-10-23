@@ -131,11 +131,26 @@ class SorteiosController extends Controller
         $this->data['evento'] = $this->evento->find($this->data['inscricao']['idevento']);
         $this->data['inscricoes'] = $this->inscricao->where('idevento', $this->data['evento']['id'])->get();
         $this->data['prova'] = $this->prova->all();
-
-        dd($this->data);
+        $this->data['pos'] = 1;
 
         $qntdebois = $this->data['evento']->qntdebois;
 
+        $i = 1;
+
+        while ($i <= $qntdebois) {
+            $dados['idEvento'] = $request->get('idevento');
+            $dados['idinscricao'] = $request->get('idinscricao');
+            $dados['boi'] = 'boi' . $i;
+            $dados['pontuacao'] = $request->get('boi' . $i);
+
+            if (!is_null($dados['pontuacao'])) {
+                $this->prova->create($dados);
+            }
+
+            $i++;
+        }
+
+        /*
         for ($i = 1; $i <= $qntdebois; $i++) {
             if (!is_null($request->get('boi'.$i))) {
                 $prova = $this->prova->where('idinscricao', $request->get('idinscricao'))->where('boi', 'boi'.$i)->get();
@@ -143,6 +158,7 @@ class SorteiosController extends Controller
                 $prova[0]->update();
             }
         }
+        */
 
         $this->toast->message('Pontuação realizada com sucesso: Inscrição: ' . $this->data['inscricao']['id'], 'success');
         return view('sorteios.visualizar')->with($this->data);
