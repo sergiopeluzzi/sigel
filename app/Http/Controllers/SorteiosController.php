@@ -10,6 +10,7 @@ use App\Prova;
 use Grimthorr\LaravelToast\Toast;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class SorteiosController extends Controller
 {
@@ -124,6 +125,7 @@ class SorteiosController extends Controller
         $this->data['provas'] = $this->prova->where('idInscricao', $id)->get();
         $this->data['evento'] = $this->evento->find($this->data['inscricao']['idevento']);
         $this->data['prova'] = $this->prova->find($id);
+
         return view('sorteios.inserir')->with($this->data);
     }
 
@@ -136,6 +138,7 @@ class SorteiosController extends Controller
     {
         $this->data['inscricao'] = $this->inscricao->find($request->get('idinscricao'));
         $this->data['evento'] = $this->evento->find($this->data['inscricao']['idevento']);
+        $this->data['eventos'] = $this->evento->all();
         $this->data['inscricoes'] = $this->inscricao->where('idevento', $this->data['evento']['id'])->get();
         $this->data['prova'] = $this->prova->all();
         $this->data['pos'] = 1;
@@ -150,15 +153,17 @@ class SorteiosController extends Controller
             $dados['boi'] = 'boi' . $i;
             $dados['pontuacao'] = $request->get('boi' . $i);
 
-            if (!is_null($dados['pontuacao'])) {
-                $this->prova->create($dados);
+            if ($dados['pontuacao'] != '') {
+                if($this->prova->where('idinscricao', $request->get('idinscricao'))->where('boi', 'boi'.$i)->count() == 0) {
+                    $this->prova->create($dados);
+                }
             }
 
             $i++;
         }
 
         $this->toast->message('Pontuação realizada com sucesso: Inscrição: ' . $this->data['inscricao']['id'], 'success');
-        return view('sorteios.visualizar')->with($this->data);
+        return view('sorteios.index')->with($this->data);
     }
 
     /**

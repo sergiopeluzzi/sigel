@@ -52,9 +52,17 @@
                                         {!! Form::hidden('idinscricao', $inscricao->id) !!}
                                         {!! Form::hidden('idevento', $evento->id) !!}
                                         @for($i = 1; $i <= $evento->qntdebois; $i++)
-                                            <td>{!! Form::text('boi'.$i, isset($prova) ? $prova->where('idInscricao', $inscricao->id)->where('idEvento', $evento->id)->where('boi', 'boi'.$i)->get() : '', ['class' => 'form-control']) !!} </td>
+                                            @if(isset(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao))
+                                                <td>{!! Form::text('boi'.$i, \App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao, ['class' => 'form-control', 'readonly']) !!} </td>
+                                            @else
+                                                <td>{!! Form::text('boi'.$i, '', ['class' => 'form-control']) !!} </td>
+                                            @endif
                                         @endfor
-                                        <td>{!! Form::text('boifinal', null, ['class' => 'form-control']) !!}</td>
+                                        @if(isset(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boifinal')->first()->pontuacao))
+                                            <td>{!! Form::text('boifinal', \App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boifinal')->first()->pontuacao, ['class' => 'form-control', 'readonly']) !!}</td>
+                                        @else
+                                            <td>{!! Form::text('boifinal', null, ['class' => 'form-control']) !!}</td>
+                                        @endif
                                     </tr>
                                 </tbody>
                             </table>
