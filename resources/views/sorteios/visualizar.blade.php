@@ -47,7 +47,7 @@
                                     @for($i = 1; $i <= $evento->qntdebois; $i++)
                                         <td class="text-center">{{ isset(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao) ? \App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao : '' }}</td>
                                     @endfor
-                                    <td class="text-center text-bold lead">@if($prova->where('idinscricao', $inscricao->id)->sum('pontuacao') == 0) {{ number_format(0, 2, ',', '.') }} @else {{ number_format($prova->where('idinscricao', $inscricao->id)->sum('pontuacao') / ($prova->where('idinscricao', $inscricao->id)->count()), 2, ',', '.') }}@endif</td>
+                                    <td class="text-center text-bold lead">@if($prova->where('idinscricao', $inscricao->id)->sum('pontuacao') == 0) {{ '' }} @else {{ number_format($prova->where('idinscricao', $inscricao->id)->sum('pontuacao') / ($prova->where('idinscricao', $inscricao->id)->count()), 3, ',', '.') }}@endif</td>
                                     <td align="center">
                                         @if(true)
                                             <a data-toggle="tooltip" data-original-title="Inserir tempo" class="btn btn-sm btn-primary" href="{{ route('sorteios.visualizar.inserir', ['id' => $inscricao->id]) }}"><i class="glyphicon glyphicon-time"></i></a>

@@ -265,4 +265,21 @@ class RelatoriosController extends Controller
         exit;
 
     }
+
+    public function contas()
+    {
+        $this->data['eventos'] = $this->evento->orderBy('id', 'desc')->get();
+        return view('relatorios.contas')->with($this->data);
+    }
+
+    public function imprimirContas(Request $request)
+    {
+        $dados = $request->all();
+
+        $evento = $this->evento->find($dados['idevento']);
+        $inscricoes = $this->inscricao->where('idevento', $evento->id)->get();
+
+        //$inscricoes->count();
+
+    }
 }

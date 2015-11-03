@@ -73,6 +73,8 @@ Route::group(['prefix' => 'relatorios', 'middleware' => 'auth'], function() {
     Route::post('ficha/imprimir', ['as' => 'relatorios.imprimirFicha', 'uses' => 'RelatoriosController@imprimirFicha']);
     Route::get('listaProva', ['as' => 'relatorios.listaProva', 'uses' => 'RelatoriosController@listaProva']);
     Route::post('listaProva/imprimir', ['as' => 'relatorios.imprimirListaProva', 'uses' => 'RelatoriosController@imprimirListaProva']);
+    Route::get('contas', ['as' => 'relatorios.contas', 'uses' => 'RelatoriosController@contas']);
+    Route::post('contas/imprimir', ['as' => 'relatorios.imprimirContas', 'uses' => 'RelatoriosController@imprimirContas']);
 
 });
 
