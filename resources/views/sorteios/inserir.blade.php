@@ -53,15 +53,15 @@
                                         {!! Form::hidden('idevento', $evento->id) !!}
                                         @for($i = 1; $i <= $evento->qntdebois; $i++)
                                             @if(isset(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao))
-                                                <td>{!! Form::text('boi'.$i, \App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao, ['class' => 'form-control', 'readonly']) !!} </td>
+                                                <td>{!! Form::text('boi'.$i, number_format(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao, 3, ',', '.'), ['class' => 'form-control', 'readonly']) !!} </td>
                                             @else
-                                                <td>{!! Form::text('boi'.$i, '', ['class' => 'form-control']) !!} </td>
+                                                <td>{!! Form::input('number', 'boi'.$i, '', ['class' => 'form-control', 'step' => 'any']) !!} </td>
                                             @endif
                                         @endfor
                                         @if(isset(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boifinal')->first()->pontuacao))
-                                            <td>{!! Form::text('boifinal', \App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boifinal')->first()->pontuacao, ['class' => 'form-control', 'readonly']) !!}</td>
+                                            <td>{!! Form::text('boifinal', number_format(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boifinal')->first()->pontuacao, 3, ',', '.'), ['class' => 'form-control', 'readonly']) !!}</td>
                                         @else
-                                            <td>{!! Form::text('boifinal', null, ['class' => 'form-control']) !!}</td>
+                                            <td>{!! Form::input('number', 'boifinal', '', ['class' => 'form-control', 'step' => 'any']) !!}</td>
                                         @endif
                                     </tr>
                                 </tbody>

@@ -43,6 +43,24 @@
                             </div>
                         </div>
                         <br/>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="optionsRadios">Tipo de Relatório:</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="branco" checked>
+                                        Em branco
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="preenchido">
+                                        Preenchido
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <div class="form-group">
                             <button type="submit" class="btn btn-lg btn-success" value="Salvar">
                                 <i class="glyphicon glyphicon-print"></i> Gerar Relatório

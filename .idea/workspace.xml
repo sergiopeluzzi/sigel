@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="136d0546-2193-41cd-ba7f-83eda433de5d" name="Default" comment="Ajustes das atividades de 01 a 04 do trello">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/relatorios/contas.blade.php" />
+    <list default="true" id="136d0546-2193-41cd-ba7f-83eda433de5d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/relatorios/contas.blade.php" afterPath="$PROJECT_DIR$/resources/views/relatorios/contas.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sorteios/inserir.blade.php" afterPath="$PROJECT_DIR$/resources/views/sorteios/inserir.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php" afterPath="$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/sidebar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php" afterPath="$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -56,25 +58,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="inscricoes" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - homestead@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="homestead" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="eventos" />
+        <option name="myItemId" value="provas" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -85,11 +69,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.653847">
-              <caret line="76" column="119" selection-start-line="76" selection-start-column="119" selection-end-line="76" selection-end-column="119" />
+            <state vertical-scroll-proportion="1.4052813">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,63 +82,10 @@
       <file leaf-file-name="SorteiosController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-62.76923">
-              <caret line="158" column="17" selection-start-line="158" selection-start-column="17" selection-end-line="158" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RelatoriosController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.804822">
-              <caret line="281" column="31" selection-start-line="281" selection-start-column="31" selection-end-line="281" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contas.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/relatorios/contas.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462">
-              <caret line="23" column="77" selection-start-line="23" selection-start-column="77" selection-end-line="23" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="visualizar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.26923">
-              <caret line="49" column="303" selection-start-line="49" selection-start-column="303" selection-end-line="49" selection-end-column="303" />
+            <state vertical-scroll-proportion="-28.115385">
+              <caret line="166" column="68" selection-start-line="166" selection-start-column="68" selection-end-line="166" selection-end-column="68" />
               <folding>
-                <marker date="1446586222435" expanded="true" signature="3392:3525" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/sidebar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.692307">
-              <caret line="24" column="146" selection-start-line="24" selection-start-column="146" selection-end-line="24" selection-end-column="146" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inserir.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/sorteios/inserir.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.384615">
-              <caret line="75" column="65" selection-start-line="75" selection-start-column="65" selection-end-line="75" selection-end-column="65" />
-              <folding>
-                <marker date="1446563599905" expanded="true" signature="3363:3520" placeholder="..." />
-                <marker date="1446563599905" expanded="true" signature="3375:3477" placeholder="..." />
+                <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,6 +106,71 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="RelatoriosController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-26.961538">
+              <caret line="129" column="268" selection-start-line="129" selection-start-column="268" selection-end-line="129" selection-end-column="268" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contas.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/relatorios/contas.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.653847">
+              <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="marcacaoprova.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-36.615383">
+              <caret line="56" column="118" selection-start-line="56" selection-start-column="118" selection-end-line="56" selection-end-column="118" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="visualizar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.807692">
+              <caret line="50" column="302" selection-start-line="50" selection-start-column="302" selection-end-line="50" selection-end-column="302" />
+              <folding>
+                <marker date="1446650352414" expanded="true" signature="3794:3927" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inserir.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/sorteios/inserir.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.307693">
+              <caret line="55" column="67" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
+              <folding>
+                <marker date="1446650216527" expanded="true" signature="3363:3548" placeholder="..." />
+                <marker date="1446650216527" expanded="true" signature="3375:3491" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/sidebar.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.730769">
+              <caret line="21" column="131" selection-start-line="21" selection-start-column="131" selection-end-line="21" selection-end-column="131" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -187,7 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/inicio.blade.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
         <option value="$PROJECT_DIR$/resources/views/header.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PrincipalController.php" />
@@ -227,17 +222,18 @@
         <option value="$PROJECT_DIR$/resources/views/relatorios/listaprova.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/inscricoes/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProvasController.php" />
-        <option value="$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/sorteios/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/InscricoesController.php" />
-        <option value="$PROJECT_DIR$/resources/views/sorteios/inserir.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/7a88dba9-2e83-4266-9b51-47a7ad5076ec/console.sql" />
         <option value="$PROJECT_DIR$/resources/views/relatorios/contas.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php" />
+        <option value="$PROJECT_DIR$/resources/views/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sorteios/inserir.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php" />
       </list>
     </option>
   </component>
@@ -418,7 +414,7 @@
     <property name="options.lastSelected" value="File.Encoding" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="relatorio&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/app/Http/Controllers/RelatoriosController.php&#10;side&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/resources/views/sidebar.blade.php&#10;inserir&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/resources/views/sorteios/inserir.blade.php&#10;visual&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;Contro&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;routes&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/app/Http/routes.php&#10;Sorte&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;ad&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/public/bower_components/admin-lte/dist/css/AdminLTE.css&#10;inde&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/index.blade.php&#10;InscricoesCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;sorteio&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;fpd&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/vendor/anouar/fpdf/src/Anouar/Fpdf/Fpdf.php&#10;ma&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/relatorios/marcacaoprova.blade.php&#10;index.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/inscricoes/index.blade.php&#10;form&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;create&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/create.blade.php&#10;index&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/index.blade.php&#10;rela&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/RelatoriosController.php&#10;show&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/show.blade.php&#10;prova&#9;null&#9;null&#10;pro&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/relatorios/marcacaoprova.blade.php&#10;eventos/fo&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;Evento&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;EventoRe&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/EventosRequest.php&#10;Eventos&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;edit.bla&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;edit&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/editar.blade.php&#10;inseri&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/inserir.blade.php&#10;templ&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/template.blade.php&#10;Competi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;Inscricao&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Inscricao.php&#10;Prova&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Prova.php&#10;Pro&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Prova.php&#10;listage&#9;null&#9;null&#10;inse&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/inserir.blade.php&#10;visualiz&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;Inscri&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;form.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;visu&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;Sorteios&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;Relato&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/config/app.php&#10;si&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sidebar.blade.php&#10;EventosCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;route&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/routes.php&#10;sorte&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;Competidores&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;EventosContr&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;ProvasRe&#9;null&#9;null&#10;Service&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Providers/RouteServiceProvider.php" />
+    <property name="SearchEverywhereHistoryKey" value="inserir&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/resources/views/sorteios/inserir.blade.php&#10;for&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/resources/views/eventos/form.blade.php&#10;relatorio&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/app/Http/Controllers/RelatoriosController.php&#10;side&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/resources/views/sidebar.blade.php&#10;visual&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;Contro&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;routes&#9;FILE&#9;file://C:/Users/Sergio/Dev/sigel/app/Http/routes.php&#10;Sorte&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;ad&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/public/bower_components/admin-lte/dist/css/AdminLTE.css&#10;inde&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/index.blade.php&#10;InscricoesCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;sorteio&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;fpd&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/vendor/anouar/fpdf/src/Anouar/Fpdf/Fpdf.php&#10;ma&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/relatorios/marcacaoprova.blade.php&#10;index.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/inscricoes/index.blade.php&#10;form&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;create&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/create.blade.php&#10;index&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/index.blade.php&#10;rela&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/RelatoriosController.php&#10;show&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/show.blade.php&#10;prova&#9;null&#9;null&#10;pro&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/relatorios/marcacaoprova.blade.php&#10;eventos/fo&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;Evento&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;EventoRe&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Requests/EventosRequest.php&#10;Eventos&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;edit.bla&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/edit.blade.php&#10;edit&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/editar.blade.php&#10;inseri&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/inserir.blade.php&#10;templ&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/template.blade.php&#10;Competi&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;Inscricao&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Inscricao.php&#10;Prova&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Prova.php&#10;Pro&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Prova.php&#10;listage&#9;null&#9;null&#10;inse&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/inserir.blade.php&#10;visualiz&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;Inscri&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/InscricoesController.php&#10;form.&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/eventos/form.blade.php&#10;visu&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sorteios/visualizar.blade.php&#10;Sorteios&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;Relato&#9;null&#9;null&#10;app&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/config/app.php&#10;si&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/resources/views/sidebar.blade.php&#10;EventosCon&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;route&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/routes.php&#10;sorte&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/SorteiosController.php&#10;Competidores&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/CompetidoresController.php&#10;EventosContr&#9;FILE&#9;file://C:/Users/Blye/Dev/sigel/app/Http/Controllers/EventosController.php&#10;ProvasRe&#9;null&#9;null" />
     <property name="FullScreen" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -499,34 +495,41 @@
       <option name="project" value="LOCAL" />
       <updated>1446583650212</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Inicio do relatorio de prestacao de contas">
+      <created>1446587369132</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1446587369132</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25189108" sideWeight="0.5008157" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16257995" sideWeight="0.49918434" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1652452" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4281081" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25189108" sideWeight="0.5008157" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16257995" sideWeight="0.49918434" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1652452" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25189108" sideWeight="0.5008157" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -543,20 +546,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ajustado o processo de inscricao" />
     <MESSAGE value="Ajustes das atividades de 01 a 04 do trello" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustes das atividades de 01 a 04 do trello" />
+    <MESSAGE value="Inicio do relatorio de prestacao de contas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inicio do relatorio de prestacao de contas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71505374">
-          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/ProvasRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.91935486">
@@ -788,13 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60091746">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="43" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/sorteios/editar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38990825">
@@ -806,13 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1559633">
           <caret line="8" column="75" selection-start-line="8" selection-start-column="75" selection-end-line="8" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/eventos/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.638448">
-          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -840,6 +823,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.078071184">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/relatorios/ficha.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6590126">
+          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7a88dba9-2e83-4266-9b51-47a7ad5076ec/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="80" selection-start-line="0" selection-start-column="80" selection-end-line="0" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/eventos/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64408726">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="31" />
+          <folding>
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1444764603797" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="21" column="131" selection-start-line="21" selection-start-column="131" selection-end-line="21" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sorteios/inserir.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.307693">
+          <caret line="55" column="67" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
+          <folding>
+            <marker date="1446650216527" expanded="true" signature="3363:3548" placeholder="..." />
+            <marker date="1446650216527" expanded="true" signature="3375:3491" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.807692">
+          <caret line="50" column="302" selection-start-line="50" selection-start-column="302" selection-end-line="50" selection-end-column="302" />
+          <folding>
+            <marker date="1446650352414" expanded="true" signature="3794:3927" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/relatorios/marcacaoprova.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-36.615383">
+          <caret line="56" column="118" selection-start-line="56" selection-start-column="118" selection-end-line="56" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/relatorios/contas.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.653847">
+          <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.961538">
+          <caret line="129" column="268" selection-start-line="129" selection-start-column="268" selection-end-line="129" selection-end-column="268" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.115385">
+          <caret line="166" column="68" selection-start-line="166" selection-start-column="68" selection-end-line="166" selection-end-column="68" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/f7a5c19b/7a88dba9-2e83-4266-9b51-47a7ad5076ec/homestead..provas">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -853,79 +950,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sorteios/inserir.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.384615">
-          <caret line="75" column="65" selection-start-line="75" selection-start-column="65" selection-end-line="75" selection-end-column="65" />
-          <folding>
-            <marker date="1446563599905" expanded="true" signature="3363:3520" placeholder="..." />
-            <marker date="1446563599905" expanded="true" signature="3375:3477" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.078071184">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SorteiosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-62.76923">
-          <caret line="158" column="17" selection-start-line="158" selection-start-column="17" selection-end-line="158" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sorteios/visualizar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.26923">
-          <caret line="49" column="303" selection-start-line="49" selection-start-column="303" selection-end-line="49" selection-end-column="303" />
-          <folding>
-            <marker date="1446586222435" expanded="true" signature="3392:3525" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.692307">
-          <caret line="24" column="146" selection-start-line="24" selection-start-column="146" selection-end-line="24" selection-end-column="146" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.653847">
-          <caret line="76" column="119" selection-start-line="76" selection-start-column="119" selection-end-line="76" selection-end-column="119" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/relatorios/ficha.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6590126">
-          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/relatorios/contas.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462">
-          <caret line="23" column="77" selection-start-line="23" selection-start-column="77" selection-end-line="23" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RelatoriosController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.804822">
-          <caret line="281" column="31" selection-start-line="281" selection-start-column="31" selection-end-line="281" selection-end-column="31" />
+        <state vertical-scroll-proportion="1.4052813">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
         </state>
       </provider>

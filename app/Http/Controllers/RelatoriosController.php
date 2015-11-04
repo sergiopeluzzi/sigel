@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use PhpSpec\Exception\Exception;
 
 class RelatoriosController extends Controller
@@ -120,9 +121,16 @@ class RelatoriosController extends Controller
             $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorpe)->id, 1, 0, 'C');
             $fpdf->Cell(45, 12, $this->competidor->find($inscricao->idcompetidorpe)->nome, 1, 0, 'L');
             $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorcabeca)->handcapcabeca + $this->competidor->find($inscricao->idcompetidorpe)->handcappe , 1, 0, 'C');
-            for ($i = 1; $i <= $evento->qntdebois; $i++) {
-                $fpdf->Cell(18, 12, ' ', 1, 0, 'C');
+            if($request->get('optionsRadios') == 'branco') {
+                for ($i = 1; $i <= $evento->qntdebois; $i++) {
+                    $fpdf->Cell(18, 12, ' ', 1, 0, 'C');
+                }
+            } else if ($request->get('optionsRadios') == 'preenchido') {
+                for ($i = 1; $i <= $evento->qntdebois; $i++) {
+                    $fpdf->Cell(18, 12, isset($this->prova->where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao) ? number_format($this->prova->where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao, 3, ',', '.form') : '', 1, 0, 'C');
+                }
             }
+
             $fpdf->Cell(18, 12, '', 1, 1, 'C');
             $pos++;
         }
@@ -275,11 +283,49 @@ class RelatoriosController extends Controller
     public function imprimirContas(Request $request)
     {
         $dados = $request->all();
+        $valorTotal = 0;
+        $valor = 0;
 
         $evento = $this->evento->find($dados['idevento']);
-        $inscricoes = $this->inscricao->where('idevento', $evento->id)->get();
+        $inscricoes = $this->inscricao->where('idevento', $evento->id)->orderBy('ordemCompeticao')->get();
+        $competidores = $this->competidor->all();
 
-        //$inscricoes->count();
+        $fpdf = new Fpdf();
+        $fpdf->AddPage();
+        //Titulo
+        $fpdf->SetFont('Arial','B',16);
+        $fpdf->Cell(0, 15,"Prestação de Contas: " . $evento->nome, 0, 1, 'C');
+
+        //Cabeçalho Analitico detalhado
+        if ($request->get('tipo') == 'B') {
+            $fpdf->SetFont('Arial','B',10);
+            $fpdf->Cell(10,5,'Insc.', 1, 0, 'C');
+            $fpdf->Cell(55,5,'Competidor Cabeça', 1, 0, 'C');
+            $fpdf->Cell(55,5,'Competidor Pé', 1, 0, 'C');
+            $fpdf->Cell(35,5,'Valor Pago', 1, 1, 'C');
+            //Registros
+            $fpdf->SetFont('Arial','',10);
+            foreach ($inscricoes as $inscricao) {
+                $fpdf->Cell(10,5,$inscricao->id, 1, 0, 'C');
+                $fpdf->Cell(55,5,$this->competidor->find($inscricao->idcompetidorcabeca)->nome, 1);
+                $fpdf->Cell(55,5,$this->competidor->find($inscricao->idcompetidorpe)->nome, 1);
+                if($inscricao->ordemInscricao <= $evento->qntInscricoesComDesconto) {
+                    $fpdf->Cell(35, 5,'R$' . number_format($evento->valorComDesconto, 2 , ',', '.') , 1, 1, 'R');
+                    $valorTotal += $evento->valorComDesconto;
+                } else {
+                    $fpdf->Cell(35, 5,'R$' . number_format($evento->valor, 2 , ',', '.') , 1, 1, 'R');
+                    $valorTotal += $evento->valor;
+                }
+            }
+
+            $fpdf->Ln();
+            $fpdf->SetFont('Arial','B',12);
+            $fpdf->Cell(120, 5,'Total:', 1, 0, 'R');
+            $fpdf->Cell(35, 5,'R$ ' . number_format($valorTotal, 2, ',', '.'), 1, 1, 'R');
+
+            $fpdf->Output();
+            exit;
+        }
 
     }
 }

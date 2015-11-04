@@ -160,7 +160,17 @@ class SorteiosController extends Controller
             }
 
             $i++;
+
+            if($i == $qntdebois) {
+                if($this->prova->where('idinscricao', $request->get('idinscricao'))->where('boi', 'boifinal')->count() == 0) {
+                    $dados['boi'] = 'boifinal';
+                    $dados['pontuacao'] = $request->get('boifinal');
+                    $this->prova->create($dados);
+                }
+            }
         }
+
+
 
         $this->toast->message('Pontuação realizada com sucesso: Inscrição: ' . $this->data['inscricao']['id'], 'success');
         return view('sorteios.index')->with($this->data);

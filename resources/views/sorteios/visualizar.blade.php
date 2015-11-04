@@ -31,6 +31,7 @@
                                 @for($i = 1; $i <= $evento->qntdebois; $i++)
                                     <th class="text-center">Boi {{ $i }}</th>
                                 @endfor
+                                <th class="text-center">Boi Final</th>
                                 <th class="text-center">Média</th>
                                 <th class="text-center">Ações</th>
                             </tr>
@@ -45,8 +46,9 @@
                                     <td class="text-center" width="15">{{ \App\Competidor::find($inscricao->idcompetidorpe)->handcappe }}</td>
                                     <td>{{ \App\Competidor::find($inscricao->idcompetidorpe)->nome . ' * ' . \App\Competidor::find($inscricao->idcompetidorpe)->apelido }}</td>
                                     @for($i = 1; $i <= $evento->qntdebois; $i++)
-                                        <td class="text-center">{{ isset(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao) ? \App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao : '' }}</td>
+                                        <td class="text-center">{{ isset(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao) ? number_format(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao, 3, ',', '.') : '' }}</td>
                                     @endfor
+                                    <td class="text-center">{{ isset(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boifinal')->first()->pontuacao) ? number_format(\App\Prova::where('idinscricao', $inscricao->id)->where('boi', 'boifinal')->first()->pontuacao, 3, ',', '.') : '' }}</td>
                                     <td class="text-center text-bold lead">@if($prova->where('idinscricao', $inscricao->id)->sum('pontuacao') == 0) {{ '' }} @else {{ number_format($prova->where('idinscricao', $inscricao->id)->sum('pontuacao') / ($prova->where('idinscricao', $inscricao->id)->count()), 3, ',', '.') }}@endif</td>
                                     <td align="center">
                                         @if(true)
@@ -63,9 +65,6 @@
                 </div>
             </div>
         </div>
-
-        @include('vendor.toast.messages-jquery')
-
     </div>
 @stop
 

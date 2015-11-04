@@ -32,6 +32,15 @@
                                 </select>
                             </div>
                         </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="tipo">Tipo:</label>
+                                <select id="tipo" name="tipo" class="form-control">
+                                        <option value="B" selected>Analítico</option>
+                                </select>
+                            </div>
+                        </div>
                         <br/>
                         <div class="form-group">
                             <button type="submit" class="btn btn-lg btn-success" value="Salvar">
