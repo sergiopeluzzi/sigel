@@ -20,6 +20,7 @@ class SorteiosController extends Controller
     private $toast;
     private $data;
     private $prova;
+    private $ordem;
 
     public function __construct(Evento $evento, Inscricao $inscricao, Competidor $competidor, Toast $toast, Prova $prova)
     {
@@ -101,9 +102,9 @@ class SorteiosController extends Controller
 
     public function visualizar(Request $request)
     {
-        if($request->get('ordem') == 'n') {
-            $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->orderBy('ordemCompeticao', 'asc')->get();
-        } else if ($request->get('ordem') == 'p') {
+        $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->orderBy('ordemCompeticao', 'asc')->get();
+
+        if ($request->get('ordem') == 'p') {
             $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->orderBy('ordemCompeticao', 'desc')->orderBy('created_at', 'asc')->get();
         }
         $this->data['evento'] = $this->evento->find($request->idevento);
@@ -161,8 +162,8 @@ class SorteiosController extends Controller
 
             $i++;
 
-            if($i == $qntdebois) {
-                if ($dados['pontuacao'] != '') {
+            if($i > $qntdebois) {
+                if ($request->get('boifinal') > 0) {
                     if($this->prova->where('idinscricao', $request->get('idinscricao'))->where('boi', 'boifinal')->count() == 0) {
                         $dados['boi'] = 'boifinal';
                         $dados['pontuacao'] = $request->get('boifinal');
@@ -171,9 +172,12 @@ class SorteiosController extends Controller
                 }
             }
         }
+        //dd(array($dados, $i));
 
         $this->toast->message('Pontuação realizada com sucesso: Inscrição: ' . $this->data['inscricao']['id'], 'success');
-        return view('sorteios.index')->with($this->data);
+        return redirect()->back();
+        //return view('sorteios.visualizar')->with($this->data);
+        //return view('sorteios.index')->with($this->data);
     }
 
     /**
