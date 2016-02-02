@@ -44,6 +44,13 @@
                         </div>
                         <br/>
                         <div class="row">
+                            <div class="col-xs-3">
+                                <label for="hc">Handcap maior que:</label>
+                                <input type="number" id="hc" name="hc" class="form-control" step="any" value="0" >
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
                             <div class="col-xs-6">
                                 <label for="optionsRadios">Tipo de Relatório:</label>
                                 <div class="radio">

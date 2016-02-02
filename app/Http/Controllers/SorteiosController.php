@@ -140,7 +140,8 @@ class SorteiosController extends Controller
         $this->data['inscricao'] = $this->inscricao->find($request->get('idinscricao'));
         $this->data['evento'] = $this->evento->find($this->data['inscricao']['idevento']);
         $this->data['eventos'] = $this->evento->all();
-        $this->data['inscricoes'] = $this->inscricao->where('idevento', $this->data['evento']['id'])->get();
+        $this->data['inscricoes'] = $this->inscricao->where('idevento', $request->idevento)->orderBy('ordemCompeticao', 'asc')->get();
+        //$this->data['inscricoes'] = $this->inscricao->where('idevento', $this->data['evento']['id'])->get();
         $this->data['prova'] = $this->prova->all();
         $this->data['pos'] = 1;
 
@@ -172,12 +173,8 @@ class SorteiosController extends Controller
                 }
             }
         }
-        //dd(array($dados, $i));
 
-        $this->toast->message('Pontuação realizada com sucesso: Inscrição: ' . $this->data['inscricao']['id'], 'success');
-        return redirect()->back();
-        //return view('sorteios.visualizar')->with($this->data);
-        //return view('sorteios.index')->with($this->data);
+        return view('sorteios.visualizar')->with($this->data);
     }
 
     /**

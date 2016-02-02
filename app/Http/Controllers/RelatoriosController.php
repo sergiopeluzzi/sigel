@@ -96,6 +96,8 @@ class RelatoriosController extends Controller
             $inscricoes = $this->inscricao->where('idevento', $evento->id)->orderBy('ordemCompeticao', 'asc')->orderBy('created_at', 'asc')->get();
         }
 
+        $hc = $request->get('hc');
+
         $fpdf = new Fpdf();
         $fpdf->AddPage('L');
         //Titulo
@@ -115,23 +117,24 @@ class RelatoriosController extends Controller
         $fpdf->SetFont('Arial','',10);
         $pos = 1;
         foreach ($inscricoes as $inscricao) {
-            $fpdf->Cell(10, 12, $pos . 'º', 1, 0, 'C');
-            $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorcabeca)->id, 1, 0, 'C');
-            $fpdf->Cell(45, 12, $this->competidor->find($inscricao->idcompetidorcabeca)->nome, 1, 0, 'L');
-            $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorpe)->id, 1, 0, 'C');
-            $fpdf->Cell(45, 12, $this->competidor->find($inscricao->idcompetidorpe)->nome, 1, 0, 'L');
-            $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorcabeca)->handcapcabeca + $this->competidor->find($inscricao->idcompetidorpe)->handcappe , 1, 0, 'C');
-            if($request->get('optionsRadios') == 'branco') {
-                for ($i = 1; $i <= $evento->qntdebois; $i++) {
-                    $fpdf->Cell(18, 12, ' ', 1, 0, 'C');
+            if ($this->competidor->find($inscricao->idcompetidorcabeca)->handcapcabeca + $this->competidor->find($inscricao->idcompetidorpe)->handcappe >= $hc) {
+                $fpdf->Cell(10, 12, $pos . 'º', 1, 0, 'C');
+                $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorcabeca)->id, 1, 0, 'C');
+                $fpdf->Cell(45, 12, $this->competidor->find($inscricao->idcompetidorcabeca)->nome, 1, 0, 'L');
+                $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorpe)->id, 1, 0, 'C');
+                $fpdf->Cell(45, 12, $this->competidor->find($inscricao->idcompetidorpe)->nome, 1, 0, 'L');
+                $fpdf->Cell(10, 12, $this->competidor->find($inscricao->idcompetidorcabeca)->handcapcabeca + $this->competidor->find($inscricao->idcompetidorpe)->handcappe , 1, 0, 'C');
+                if($request->get('optionsRadios') == 'branco') {
+                    for ($i = 1; $i <= $evento->qntdebois; $i++) {
+                        $fpdf->Cell(18, 12, ' ', 1, 0, 'C');
+                    }
+                } else if ($request->get('optionsRadios') == 'preenchido') {
+                    for ($i = 1; $i <= $evento->qntdebois; $i++) {
+                        $fpdf->Cell(18, 12, isset($this->prova->where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao) ? number_format($this->prova->where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao, 3, ',', '.form') : '', 1, 0, 'C');
+                    }
                 }
-            } else if ($request->get('optionsRadios') == 'preenchido') {
-                for ($i = 1; $i <= $evento->qntdebois; $i++) {
-                    $fpdf->Cell(18, 12, isset($this->prova->where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao) ? number_format($this->prova->where('idinscricao', $inscricao->id)->where('boi', 'boi'.$i)->first()->pontuacao, 3, ',', '.form') : '', 1, 0, 'C');
-                }
+                $fpdf->Cell(18, 12, '', 1, 1, 'C');
             }
-
-            $fpdf->Cell(18, 12, '', 1, 1, 'C');
             $pos++;
         }
 
@@ -263,11 +266,13 @@ class RelatoriosController extends Controller
         //Registros
         $fpdf->SetFont('Arial','',10);
         foreach ($competidores as $competidor) {
-            $fpdf->Cell(10,5,$competidor->id, 1, 0, 'C');
-            $fpdf->Cell(55,5,$competidor->nome, 1);
-            $fpdf->Cell(55,5,$competidor->apelido, 1);
-            $fpdf->Cell(35,5,$inscricoes->where('idcompetidorcabeca', $competidor->id)->where('idevento', $evento->id)->count(), 1, 0, 'C');
-            $fpdf->Cell(35,5,$inscricoes->where('idcompetidorpe', $competidor->id)->where('idevento', $evento->id)->count(), 1, 1, 'C');
+            if ($inscricoes->where('idcompetidorcabeca', $competidor->id)->where('idevento', $evento->id)->count() > 0 || $inscricoes->where('idcompetidorpe', $competidor->id)->where('idevento', $evento->id)->count() > 0) {
+                $fpdf->Cell(10,5,$competidor->id, 1, 0, 'C');
+                $fpdf->Cell(55,5,$competidor->nome, 1);
+                $fpdf->Cell(55,5,$competidor->apelido, 1);
+                $fpdf->Cell(35,5,$inscricoes->where('idcompetidorcabeca', $competidor->id)->where('idevento', $evento->id)->count(), 1, 0, 'C');
+                $fpdf->Cell(35,5,$inscricoes->where('idcompetidorpe', $competidor->id)->where('idevento', $evento->id)->count(), 1, 1, 'C');
+            }
         }
         $fpdf->Output();
         exit;
